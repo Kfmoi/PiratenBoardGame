@@ -8,20 +8,28 @@ public class PiratenKarpen {
         public int points;
         public Dice dice;
 
-        Player(int initial){
+        Player(){
             points = 0;
             dice = new Dice();
         }
     }
     public static void main(String[] args) {
         int amountofgames = 42;
+        int numberofskulls = 0;
+        int maxrolls = 8;
+        Player player1 = new Player();
+        Player player2 = new Player();
+        System.out.println(player1.dice.roll(););
         System.out.println("Welcome to Piraten Karpen Simulator!");
         System.out.println("I'm rolling a dice");
         Dice myDice = new Dice();
-        Scanner input1 = new Scanner(System.in);
-        int amountofrolls = input1.nextInt();
-        if (amountofrolls < 2 || amountofrolls > 8){
-            System.out.println("You can roll between 2 and 8");
+        for (int i=0; i<amountofgames; i++){
+            for(int j =0; j<maxrolls; j++){
+                player1.dice.roll();
+            
+            }
+
+
         }
 
         System.out.println("That's all folks!");
