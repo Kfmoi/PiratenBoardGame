@@ -31,9 +31,9 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | x   | F01 | Roll a dice |  D | 01/01/23 |  |
 | x   | F02 | Roll eight dices  |  P |  10/01/23 |
-| x   | F03 | Select how many games as command-line arg.  |  P  |   |
+| x   | F03 | 42 games are played.  |  P  |   |
 | x   | F04 | end of game with three skulls | P | |
 | x   | F05 | Player keeping random dice at their turn | B (F02) | | 
-| x   | F06 | Score points: Rolling Gold coinds or diamonds and multiplying by 100| B (F04) | | 
+| x   | F06 | Score points: Rolling Gold coins or diamonds and multiplying by 100| B (F04) | | 
 | ... | ... | ... |
 
