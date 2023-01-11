@@ -1,0 +1,1 @@
+Jan 10th, 2023 --> Started the assignment. Read the instructions and made a plan on how I will go about the assignment.
