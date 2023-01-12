@@ -21,14 +21,14 @@ public class PiratenKarpen {
 
             for(int j =0; j<maxrolls; j++){
 
-
                 System.out.println("I'm rolling a dice");
-                myDice.roll();
-                //player2.dice.roll();
-                if (myDice.roll() == Faces.GOLD || myDice.roll() == Faces.DIAMOND){
+                Faces firsrroll = myDice.roll();
+
+
+                if (firsrroll == Faces.GOLD || firsrroll == Faces.DIAMOND){
                     points += 1;
                 }
-                for (numberofskulls=0; myDice.roll() == Faces.SKULL; numberofskulls++){
+                for (numberofskulls=0; firsrroll == Faces.SKULL; numberofskulls++){
                     if(numberofskulls == 3){
                         System.out.println("Your turn is done");
                     }
@@ -37,11 +37,11 @@ public class PiratenKarpen {
             int rndmpick = selection.nextInt(((8-2)+1)+2);
             for (int k=0; k<rndmpick; k++){
                 System.out.println("I'm rolling a dice");
-                myDice.roll();
-                if (myDice.roll() == Faces.GOLD|| myDice.roll() == Faces.DIAMOND){
+                Faces cont = myDice.roll();
+                if (cont == Faces.GOLD|| cont == Faces.DIAMOND){
                     points += 1;
                 }
-                for (numberofskulls=0; myDice.roll() == Faces.SKULL; numberofskulls++){
+                for (numberofskulls=0; cont == Faces.SKULL; numberofskulls++){
                     if(numberofskulls ==3){
                         System.out.println("Your turn is done");
                     }
