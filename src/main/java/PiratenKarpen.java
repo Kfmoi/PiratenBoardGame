@@ -1,58 +1,41 @@
-import pk.Dice;
-import pk.Faces;
 
-import java.util.Random;
+import pk.Faces;
+import pk.F02;
+import pk.F04;
+import pk.F05;
+import pk.F06;
+
 public class PiratenKarpen {
+
+    public static int finalpoints;
+    
 
     public static void main(String[] args) {
         int amountofgames = 42;
-        int numberofskulls = 0;
-        int maxrolls = 8;
-        int points = 0;
-        Dice myDice = new Dice();
-        Random selection = new Random();
-
+        int score = 0;
 
 
         System.out.println("Welcome to Piraten Karpen Simulator!");
         
 
         for (int i=0; i<amountofgames; i++){
-
-            for(int j =0; j<maxrolls; j++){
-
-                System.out.println("I'm rolling a dice");
-                Faces firsrroll = myDice.roll();
-
-
-                if (firsrroll == Faces.GOLD || firsrroll == Faces.DIAMOND){
-                    points += 1;
-                }
-                for (numberofskulls=0; firsrroll == Faces.SKULL; numberofskulls++){
-                    if(numberofskulls == 3){
-                        System.out.println("Your turn is done");
-                    }
-                }
+            Faces check = F02.firstroll();
+            int skullcount = F04.count(check);
+            F04.check(skullcount);
+            score = F06.addpoints(check);
+            int num = F05.randomnum();
+            for(int j=0; j<num; j++){
+                Faces seccheck = F02.firstroll();
+                int secskullcount = F04.count(seccheck);
+                F04.check(secskullcount);
+                score += F06.addpoints(seccheck);
             }
-            int rndmpick = selection.nextInt(((8-2)+1)+2);
-            for (int k=0; k<rndmpick; k++){
-                System.out.println("I'm rolling a dice");
-                Faces cont = myDice.roll();
-                if (cont == Faces.GOLD|| cont == Faces.DIAMOND){
-                    points += 1;
-                }
-                for (numberofskulls=0; cont == Faces.SKULL; numberofskulls++){
-                    if(numberofskulls ==3){
-                        System.out.println("Your turn is done");
-                    }
-                }
-            }
-            points = points*100;
 
-
-        }
+           
+            finalpoints = F06.finalscore(score);
 
         System.out.println("That's all folks!");
     }
     
+}
 }

@@ -5,10 +5,12 @@ public class F04 {
 
     public int amountofskulls;
 
-    public static void count(Faces roll, int amountofskulls){
+    public static int count(Faces roll){
+        int amountofskulls = 0;
         if (roll == Faces.SKULL){
             amountofskulls++;
         }
+        return amountofskulls;
     }
 
     public static void check(int amountofskulls){
