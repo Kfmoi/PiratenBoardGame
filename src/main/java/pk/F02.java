@@ -11,6 +11,7 @@ public class F02 {
         for(int j =0; j<8; j++){
             System.out.println("I'm rolling a dice");
             results = myDice.roll();
+            System.out.println(results);
             
     }
     return results;
