@@ -22,6 +22,7 @@ public class PiratenKarpen {
         for (int i=0; i<amountofgames; i++){
             boolean p1check = F02.firstroll(8);
             player1.totalpoints += F02.playerpoints;
+            player1.totalsk += F02.skcount;
 
 
            do {
@@ -41,8 +42,10 @@ public class PiratenKarpen {
 
         System.out.println("Player 2's turn now");
             F02.playerpoints =0;
+            F02.skcount=0;
             boolean p2check = F02.firstroll(8);
             player2.totalpoints += F02.playerpoints;
+            player2.totalsk += F02.skcount;
 
            do {
             if (p2check == true){
