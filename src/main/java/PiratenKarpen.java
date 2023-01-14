@@ -7,6 +7,8 @@ public class PiratenKarpen {
 
     
 
+    
+
     public static void main(String[] args) {
         Player player1 = new Player();
         Player player2 = new Player();
@@ -38,6 +40,7 @@ public class PiratenKarpen {
     
 
         System.out.println("Player 2's turn now");
+            F02.playerpoints =0;
             boolean p2check = F02.firstroll(8);
             player2.totalpoints += F02.playerpoints;
 

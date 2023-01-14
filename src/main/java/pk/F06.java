@@ -1,10 +1,10 @@
 package pk;
 
 public class F06 {
-    public int amountofpoints;
 
     public static int addpoints(Faces roll){
-        int amountofpoints = 0;
+        int amountofpoints=0;
+
         if (roll.equals(Faces.GOLD)|| roll.equals(Faces.DIAMOND)){
             amountofpoints++;
         }

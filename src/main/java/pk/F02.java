@@ -3,8 +3,9 @@ package pk;
 
 
 public class F02 {
-
     public static int playerpoints =0;
+
+
 
     public static boolean firstroll(int num){
         
@@ -21,11 +22,11 @@ public class F02 {
             skullcount += F04.count(results);
             skcheck = F04.check(skullcount);
             score += F06.addpoints(results);
+
+            System.out.println(results);   
             if (skcheck == true){
                 break;
-            }
-
-            System.out.println(results);    
+            } 
     }
 
 
