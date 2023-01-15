@@ -17,7 +17,7 @@ public class F02 {
 
 
         for(int j =1; j<=num; j++){
-            System.out.println("I'm rolling a dice #" + (j));
+            System.out.println("\n I'm rolling a dice #" + (j));
             results = myDice.roll();
             skcount += F04.count(results);
             skcheck = F04.check(skcount);
@@ -30,10 +30,10 @@ public class F02 {
     }
 
 
-    System.out.println("Number of skulls: " + skcount);
-    System.out.println("Number of points rolled in first 8 rolls:" + score);
+    System.out.println("\nNumber of skulls: " + skcount);
+    System.out.println("Number of points rolled:" + score);
     playerpoints += F06.finalscore(score);
-    System.out.println("Round points: " + playerpoints);
+    System.out.println("\nRound points: " + playerpoints);
     return skcheck;
 }
 
