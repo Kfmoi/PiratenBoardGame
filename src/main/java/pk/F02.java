@@ -20,14 +20,14 @@ public class F02 {
             System.out.println("\n I'm rolling a dice #" + (j));
             results = myDice.roll();
             skcount += F04.count(results);
-            skcheck = F04.check(skcount);
             score += F06.addpoints(results);
 
-            System.out.println(results);   
-            if (skcheck == true){
-                break;
-            } 
+            System.out.println(results); 
+            skcheck = F04.check(skcount);  
     }
+    /*if (skcheck == true){
+        break;
+    } */
 
 
     System.out.println("\nNumber of skulls: " + skcount);

@@ -41,12 +41,12 @@ public class PiratenKarpen {
 
 
            do {
-            if (p1check=true){
+            if (p1check==true){
                 break;
             }
             int num = F05.randomnum();
             System.out.println("\nNumber of rolls: "+ num);
-             p1check = F02.firstroll(8);
+             p1check = F02.firstroll(num);
             player1.totalpoints += F02.playerpoints;
         
             System.out.println("Round #"+ j+ " is done");

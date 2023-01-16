@@ -5,10 +5,6 @@ public class F04 {
 
     public int amountofskulls = 0;
 
-    public static String[] face(){
-        String [] list = {"MONKEY", "PARROT", "GOLD", "DIAMOND", "SABER", "SKULL"};
-        return list;
-    }
 
     public static int count(Faces roll){
         int amountofskulls = 0;
