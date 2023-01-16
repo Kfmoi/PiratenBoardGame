@@ -5,6 +5,7 @@ public class Player {
     public int totalscore = 0;
     public int totalsk = 0;
     public int wins;
+    public String name;
     public boolean skcheck = false;
     public boolean skullcheck(boolean skcheck){
         if (skcheck == true){

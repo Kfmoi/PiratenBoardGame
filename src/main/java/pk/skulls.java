@@ -1,7 +1,7 @@
 package pk;
 
 
-public class F04 {
+public class skulls {
 
     public int amountofskulls = 0;
 

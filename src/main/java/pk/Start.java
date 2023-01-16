@@ -2,7 +2,7 @@ package pk;
 
 
 
-public class F02 {
+public class Start {
     public static int playerpoints =0;
     public static int skcount=0;
     public static boolean skcheck = false;
@@ -20,10 +20,10 @@ public class F02 {
         for(int j =1; j<=num; j++){
             System.out.println("\nI'm rolling a dice #" + (j));
             results = myDice.roll();
-            skcount += F04.count(results);
-            score += F06.addpoints(results);
+            skcount += skulls.count(results);
+            score += points_system.addpoints(results);
             System.out.println(results); 
-            skcheck = F04.check(skcount); 
+            skcheck = skulls.check(skcount); 
             res = skcheck;
     }
 
@@ -33,7 +33,7 @@ public class F02 {
 
     System.out.println("\nNumber of skulls: " + skcount);
     System.out.println("Number of points rolled:" + score);
-    playerpoints += F06.finalscore(score);
+    playerpoints += points_system.finalscore(score);
     System.out.println("\nRound points: " + playerpoints);
     return res;
 }
