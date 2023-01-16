@@ -71,7 +71,16 @@ public class PiratenKarpen {
             k++;
            } while (player2.skullcheck(player2.skcheck) == false);
 
+           System.out.println("\nFinal Points:");
+           System.out.println("\n"+player1.name + ":" + player1.totalpoints);
+           System.out.println("\n"+player2.name + ":"  + player2.totalpoints);
+
+           points_system.results(player1, player2);
+
+
     }
+            System.out.println(player1.wins);
+           System.out.println(player2.wins);
 }
     
 
@@ -82,7 +91,7 @@ public class PiratenKarpen {
         Player player2 = new Player();
 
         try (Scanner name = new Scanner(System.in)) {
-            int amountofgames = 1;
+            int amountofgames = 3;
 
 
             System.out.println("Welcome to Piraten Karpen Simulator!");
@@ -96,21 +105,12 @@ public class PiratenKarpen {
 
             strategy1(player1, player2, amountofgames);
 
-            System.out.println("\nFinal Points:");
-            System.out.println("\n"+name1 + ":" + player1.totalpoints);
-            System.out.println("\n"+name2 + ":"  + player2.totalpoints);
-
-            points_system.results(player1, player2);
-
-            System.out.println(player1.wins);
-            System.out.println(player2.wins);
-
-
             double stdout1 = stdout(player1.wins,amountofgames);
-            double stdout2 = stdout(player2.wins, amountofgames);
+           double stdout2 = stdout(player2.wins, amountofgames);
 
-            System.out.println( "\n" + name1+"'s win percentage is: "+ stdout1);
-            System.out.println( "\n" + name2+"'s win percentage is: "+ stdout2);
+           System.out.println( "\n" + player1.name+"'s win percentage is: "+ stdout1);
+           System.out.println( "\n" + player2.name+"'s win percentage is: "+ stdout2);
+
         }
 
 
