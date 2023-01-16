@@ -2,6 +2,7 @@
 import pk.F02;
 import pk.Player;
 import pk.F05;
+import pk.Faces;
 
 public class PiratenKarpen {
     public static double average(int play, int games){
@@ -25,6 +26,8 @@ public class PiratenKarpen {
         for (int i=0; i<amountofgames; i++){
             F02.skcount=0;
             F02.playerpoints=0;
+            player1.skcheck =false;
+            player2.skcheck =false;
             player1.totalsk = 0;
             player2.totalsk = 0;
             player1.totalpoints = 0;
@@ -38,24 +41,26 @@ public class PiratenKarpen {
 
 
            do {
-            if (p1check==true){
+            if (p1check=true){
                 break;
             }
             int num = F05.randomnum();
             System.out.println("\nNumber of rolls: "+ num);
-            p1check =F02.firstroll(num);
+             p1check = F02.firstroll(8);
             player1.totalpoints += F02.playerpoints;
         
             System.out.println("Round #"+ j+ " is done");
             j++;
-           } while (p1check == false);
+           } while (player1.skcheck == false);
 
     
 
         System.out.println("\nPlayer 2's turn now");
             F02.playerpoints =0;
             F02.skcount=0;
+
             boolean p2check = F02.firstroll(8);
+
             player2.totalpoints += F02.playerpoints;
             player2.totalsk += F02.skcount;
 
@@ -70,7 +75,7 @@ public class PiratenKarpen {
             System.out.println("Round #"+ j+ " is done");
             player2.totalpoints += F02.playerpoints;
             j++;
-           } while (p2check == false);
+           } while (player2.skcheck == false);
 
 
         System.out.println("Final Points:");
@@ -78,12 +83,12 @@ public class PiratenKarpen {
         System.out.println("Player 2: " + player2.totalpoints);
         if (player1.totalpoints > player2.totalpoints){
             player1.wins++;
-            System.out.println("\n Player 1 Wins!!!");
+            System.out.println("\nPlayer 1 Wins!!!");
         } else if (player1.totalpoints == player2.totalpoints){
-            System.out.println("\n Tie Game");
+            System.out.println("\nTie Game");
         } else {
             player2.wins++;
-            System.out.println("\n Player 2 Wins!!!");
+            System.out.println("\nPlayer 2 Wins!!!");
         }
 }
 System.out.println(player1.wins);

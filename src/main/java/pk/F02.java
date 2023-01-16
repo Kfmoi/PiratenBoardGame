@@ -37,5 +37,10 @@ public class F02 {
     return skcheck;
 }
 
+/*public static Faces save(Faces rolled, int rndm){
+
+
+}*/
+
 
 }

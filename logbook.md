@@ -3,3 +3,6 @@ Jan 10th, 2023 --> Started the assignment. Read the instructions and made a plan
 --> "Made progress on features and started thinking about how I will implement"
 Jan 11th, 2023 --> Worked on multiple features
 --> Fixed the backlog
+Jan 12th, 2023 --> Made progress on the code
+--> Some problems with the understanding of the game, especially the points system
+--> Completed most of the features and started working on the report

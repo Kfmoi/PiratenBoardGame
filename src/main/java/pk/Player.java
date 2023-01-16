@@ -5,4 +5,5 @@ public class Player {
     public int totalscore = 0;
     public int totalsk = 0;
     public int wins;
+    public boolean skcheck = false;
 }
