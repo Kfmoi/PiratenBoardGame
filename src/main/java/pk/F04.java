@@ -18,7 +18,6 @@ public class F04 {
 
     public static boolean check(int amountofskulls){
         if (amountofskulls == 3){
-            System.out.println("Three skulls have been rolled. Turn is done");
             return true;
         } else{
             return false;
