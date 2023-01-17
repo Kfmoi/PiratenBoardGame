@@ -17,7 +17,7 @@ public class skulls {
     }
 
     public static boolean check(int amountofskulls){
-        if (amountofskulls == 3){
+        if (amountofskulls >= 3){
             return true;
         } else{
             return false;

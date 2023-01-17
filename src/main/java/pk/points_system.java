@@ -19,10 +19,10 @@ public class points_system {
     }
 
     public static void results(Player player1, Player player2){
-        if ((player1.totalpoints > player2.totalpoints) && player1.totalpoints >6000){
+        if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
             player1.wins++;
             System.out.println("\n"+ player1.name +" Wins!!!");
-        } else if ((player2.totalpoints > player1.totalpoints) && player2.totalpoints >6000){
+        } else if ((player2.totalscore > player1.totalscore) && player2.totalscore >=6000){
             System.out.println("\n"+ player2.name +" Wins!!!");
             player2.wins++;
         } else {

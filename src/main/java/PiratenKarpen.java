@@ -14,7 +14,7 @@ public class PiratenKarpen {
         Player player2 = new Player();
 
         try (Scanner name = new Scanner(System.in)) {
-            int amountofgames = 3;
+            int amountofgames = 5;
 
 
             System.out.println("Welcome to Piraten Karpen Simulator!");

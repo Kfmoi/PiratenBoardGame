@@ -9,11 +9,13 @@ public class Start {
 
 
 
-    public static boolean firstroll(int num){
+    public static boolean firstroll(int num, Player player){
         
         Faces results = null;
         boolean res =false;
-        int score = 0;
+        //player.totalsk=0;
+        //int skcount=0;
+        int points = 0;
         Dice myDice = new Dice();
 
 
@@ -21,10 +23,9 @@ public class Start {
             System.out.println("\nI'm rolling a dice #" + (j));
             results = myDice.roll();
             skcount += skulls.count(results);
-            score += points_system.addpoints(results);
+            points += points_system.addpoints(results);
             System.out.println(results); 
-            skcheck = skulls.check(skcount); 
-            res = skcheck;
+            res = skulls.check(skcount); 
     }
 
 
@@ -32,16 +33,14 @@ public class Start {
 
 
     System.out.println("\nNumber of skulls: " + skcount);
-    System.out.println("Number of points rolled:" + score);
-    playerpoints += points_system.finalscore(score);
-    System.out.println("\nRound points: " + playerpoints);
+    System.out.println("Number of points rolled:" + points);
+    playerpoints = points_system.finalscore(points);
+    player.totalscore += playerpoints;
+    player.totalsk += skcount;
+    System.out.println("\n" + player.name + " Round points: " + playerpoints);
     return res;
 }
 
-/*public static Faces save(Faces rolled, int rndm){
-
-
-}*/
 
 
 }
