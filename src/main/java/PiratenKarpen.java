@@ -62,8 +62,8 @@ public class PiratenKarpen {
             //System.out.println("Strategy 2: ");
             //player2.decision = input.nextLine();
 
-            player1.decision = "random";
-            player2.decision = "random";
+            player1.decision = "combo";
+            player2.decision = "combo";
 
 
             for (int i=0; i<amountofgames;i++){
@@ -105,6 +105,7 @@ public class PiratenKarpen {
                 Player.pick(player2);
 
             }while ((player1.totalscore <6000) && (player2.totalscore<6000));
+            
             System.out.println("\nFinal Points:");
             System.out.println("\n"+player1.name + ":" + player1.totalscore);
             System.out.println("\n"+player2.name + ":"  + player2.totalscore);

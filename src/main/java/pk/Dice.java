@@ -1,4 +1,5 @@
 package pk;
+
 import java.util.Random;
 
 public class Dice {
