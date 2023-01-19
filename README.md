@@ -23,7 +23,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
  * Status: 
    * Pending (P), Started (S), Blocked (B), Done (D)
  * Definition of Done (DoD):
-   * < For confirming that the a feature is done and can be delivered for good, I must run some checks and see if it there's a bugs coming up. For F01, I will create a simulator to check how many times and a faces has appeared. F02, this I just have to check if the right amount of dices is rolled each time.  >
+   * < For confirming that a feature is done and can be delivered for good, I must run some checks and see if it there's a bugs coming up. For F01, I will create a simulator to check how many times and a faces has appeared. F02, this I just have to check if the right amount of dices is rolled each time.  >
 
 ### Backlog 
 
