@@ -31,17 +31,13 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | x   | F01 | Roll eight dices  |  D |  12/01/23 |
 | x   | F02 | Keep track of points  |  D |  12/01/23 |
-| x   | F03 | Keep track of amount of skulls rolled |  D |  12/01/23 |
-| x   | F04 | end of game when three skulls are rolled | S | 10/12/23 |
-| x   | F05 | Calculate the stdout after all the games has been played  |  D |  12/01/23 |
-| x   | F06 | Keep track of wins |  D |  12/01/23 |
-| x   | F07 | Player keeping random dice at their turn | S | 10/12/23 | 
-| x   | F08 | Reroll the dice subtracting the skulls rolled  |  D |  12/01/23 |
-| x   | F09 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 | 
-| x   | F10 | Keep rerolling if the points score isnt greater or equal to 6000| S | 11/12/23 | 
-| x   | F12 | 42 games are played.  |  D  | 12/01/23 |
-| x   | F13 | Set up the games for two players  |  D |  12/01/23 |
-| x   | F14 | Associate the points to the specific player  |  D |  12/01/23 |
-| x   | F15 | Player wins, if they have more points(greater than 6000)| S | 11/12/23 | 
+| x   | F03 | end of game when three skulls are rolled | S | 10/12/23 |
+| x   | F04 | Reroll the random amount of dice subtracting the skulls rolled  |  D |  12/01/23 |
+| x   | F05 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 | 
+| x   | F06 | Keep rerolling if the points score isnt greater or equal to 6000| S | 11/12/23 | 
+| x   | F07 | 42 games are played.  |  D  | 12/01/23 |
+| x   | F08 | Calculate the stdout of the wins after all the games has been played  |  D |  12/01/23 |
+| x   | F09 | Set up the games for two players  |  D |  12/01/23 |
+| x   | F10 | Player wins, if they have more points(greater than 6000)| S | 11/12/23 | 
 | ... | ... | ... |
 
