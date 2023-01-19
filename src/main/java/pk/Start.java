@@ -13,8 +13,6 @@ public class Start {
         
         Faces results = null;
         boolean res =false;
-        //player.totalsk=0;
-        //int skcount=0;
         int points = 0;
         Dice myDice = new Dice();
 

@@ -6,3 +6,9 @@ Jan 11th, 2023 --> Worked on multiple features
 Jan 12th, 2023 --> Made progress on the code
 --> Some problems with the understanding of the game, especially the points system
 --> Completed most of the features and started working on the report
+Jan 13th, 2023 --> Completed all the minimal features
+--> Updated the backlog to associate to players
+--> Worked on making the game two players
+Jan 15th --> Organized the code
+--> Finished the report for week 1
+
