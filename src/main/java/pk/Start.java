@@ -8,7 +8,7 @@ public class Start {
     public static boolean skcheck = false;
 
 
-
+    // Function for the first 8 dice rolls
     public static boolean firstroll(int num, Player player){
         
         Faces results = null;

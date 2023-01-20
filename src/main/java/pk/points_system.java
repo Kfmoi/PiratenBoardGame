@@ -2,6 +2,7 @@ package pk;
 
 public class points_system {
 
+    // Adds points to a counter whenever a gold or diamond is rolled
     public static int addpoints(Faces roll){
         int amountofpoints=0;
 
@@ -11,13 +12,14 @@ public class points_system {
         return amountofpoints;
     }
 
-
+    // From the points, gets the score by *100
     public static int finalscore(int points){
         points = points*100;
         return points;
 
     }
 
+    // Determines the winner of each game
     public static void results(Player player1, Player player2){
 
         if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
@@ -31,6 +33,7 @@ public class points_system {
         }
     }
 
+    // // Function to count the amount of Gold faces has been rolled
     public static int goldcount(Faces roll){
         int amountofgold = 0;
         String std = roll.name();
@@ -41,6 +44,7 @@ public class points_system {
         return amountofgold;
     }
 
+    // Function to count the amount of Diamond faces has been rolled
     public static int diamondcount(Faces roll){
         int amountofdiamond = 0;
         String std = roll.name();
@@ -51,6 +55,7 @@ public class points_system {
         return amountofdiamond;
     }
 
+    // A full chest check function
     public static int fullchestcheck(Player player, int num){
         int result = 0;
         if (num ==8){
@@ -59,6 +64,7 @@ public class points_system {
         return result;
     }
 
+    // Combo checks
     public static int setcheck (Player player){
         int result = 0;
         if (player.scount == 7 || player.mcount == 7 || player.pcount == 7 || player.gcount == 7 || player.dcount ==7 ){

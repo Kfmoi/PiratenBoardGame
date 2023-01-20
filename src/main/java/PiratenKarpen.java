@@ -5,11 +5,9 @@ import java.util.Scanner;
 import pk.Player;
 import pk.Start;
 import pk.Percentage;
-import pk.Strategies;
+
 import pk.points_system;
 
-import  org.apache.logging.log4j.Logger;
-import  org.apache.logging.log4j.LogManager;
 
 public class PiratenKarpen {
 
@@ -46,7 +44,7 @@ public class PiratenKarpen {
         Player player2 = new Player();
 
         try (Scanner input = new Scanner(System.in)) {
-            int amountofgames = 1;
+            int amountofgames = 42;
 
 
             System.out.println("Welcome to Piraten Karpen Simulator!");
@@ -57,13 +55,12 @@ public class PiratenKarpen {
             player1.name =name1;
             player2.name =name2;
 
-            //System.out.println("Strategy 1: ");
-            //player1.decision = input.nextLine();
-            //System.out.println("Strategy 2: ");
-            //player2.decision = input.nextLine();
+            
 
-            player1.decision = "combo";
-            player2.decision = "combo";
+            System.out.println("\n" + player1.name + "'s strategy: ");
+            player1.decision = input.nextLine();
+            System.out.println("\n" + player2.name+ "'s strategy: ");
+            player2.decision = input.nextLine();
 
 
             for (int i=0; i<amountofgames;i++){
@@ -90,6 +87,7 @@ public class PiratenKarpen {
                 player1.scount = 0;
                 player1.mcount = 0;
                 player1.pcount=0;
+                Start.playerscore = 0;
                 System.out.println(player1.name + " rerolling....");
                 player1.skcheck =false;
                 Player.pick(player1);
@@ -100,12 +98,13 @@ public class PiratenKarpen {
                 player2.mcount = 0;
                 player2.pcount=0;
                 Start.skcount=0;
+                Start.playerscore = 0;
                 System.out.println(player2.name + " rerolling....");
                 player2.skcheck = false;
                 Player.pick(player2);
 
             }while ((player1.totalscore <6000) && (player2.totalscore<6000));
-            
+
             System.out.println("\nFinal Points:");
             System.out.println("\n"+player1.name + ":" + player1.totalscore);
             System.out.println("\n"+player2.name + ":"  + player2.totalscore);
@@ -113,11 +112,12 @@ public class PiratenKarpen {
             points_system.results(player1, player2);
             }
 
-            System.out.println(player1.wins);
-            System.out.println(player2.wins);
+            System.out.println("\n" + player1.name + "'s' total wins: " + player1.wins);
+            System.out.println("\n" + player2.name + "'s' total wins: " + player2.wins);
 
-            double stdout1 = Percentage.stdout(player1.wins,amountofgames);
-            double stdout2 = Percentage.stdout(player2.wins, amountofgames);
+            int stdout1 = Percentage.stdout(player1.wins,amountofgames);
+            int stdout2 = Percentage.stdout(player2.wins, amountofgames);
+        
 
             System.out.println( "\n" + player1.name+"'s win percentage is: "+ stdout1);
             System.out.println( "\n" + player2.name+"'s win percentage is: "+ stdout2);

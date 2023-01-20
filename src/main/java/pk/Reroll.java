@@ -1,6 +1,7 @@
 package pk;
 
 public class Reroll {
+    // Strategy 1: rerolling after the initial start
     public static void reroll(Player player1){
         
         
@@ -28,6 +29,7 @@ public class Reroll {
            } while (player1.skullcheck(player1.skcheck) == false);
     }
 
+    // Strategy 2: rerolling after the initial start
     public static void reroll2(Player player1){
         int k=1;
         int count = Start.skcount;

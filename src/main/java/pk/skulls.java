@@ -5,7 +5,7 @@ public class skulls {
 
     public int amountofskulls = 0;
 
-
+    // Function to count the amount of Parrot faces has been rolled
     public static int count(Faces roll){
         int amountofskulls = 0;
         String std = roll.name();
@@ -16,6 +16,7 @@ public class skulls {
         return amountofskulls;
     }
 
+    // Function to check if the skulls count is greater than or equal to 3
     public static boolean check(int amountofskulls){
         if (amountofskulls >= 3){
             return true;

@@ -3,6 +3,7 @@ import java.util.Random;
 
 
 public class Random_num {
+    // Function that returns a random number, subtracting the amount of skulls and dices that are kept
     public static int randomnum(int count){
         Random selection = new Random();
         int high = 8;
