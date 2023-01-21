@@ -24,9 +24,9 @@ public class points_system {
 
         if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
             player1.wins++;
-            System.out.println("\n"+ player1.name +" Wins!!!");
+            System.out.println("\n Player 1 Wins!!!");
         } else if ((player2.totalscore > player1.totalscore) && player2.totalscore >=6000){
-            System.out.println("\n"+ player2.name +" Wins!!!");
+            System.out.println("\n Player 2 Wins!!!");
             player2.wins++;
         } else {
             System.out.println("\nTie Game");
@@ -58,7 +58,7 @@ public class points_system {
     // A full chest check function
     public static int fullchestcheck(Player player, int num){
         int result = 0;
-        if (num ==8){
+        if (num == 8){
             result += 500;
         }
         return result;

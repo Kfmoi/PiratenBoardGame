@@ -42,7 +42,7 @@ public class Start {
     playerscore += points_system.finalscore(points);
     player.totalscore += playerscore;
     player.totalsk += skcount;
-    System.out.println("\n" + player.name + " Round points: " + playerscore);
+    System.out.println("\nRound points: " + playerscore);
     return res;
 }
 

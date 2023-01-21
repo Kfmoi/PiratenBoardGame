@@ -9,8 +9,8 @@ public class Player {
     public int mcount = 0;
     public int scount =0 ;
     public int pcount =0 ;
-    public int wins;
-    public String name;
+    public double wins;
+
     public boolean skcheck = false;
     public String decision = "";
     public static void pick(Player player1){
