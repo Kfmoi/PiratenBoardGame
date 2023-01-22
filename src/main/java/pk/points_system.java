@@ -69,15 +69,20 @@ public class points_system {
         int result = 0;
         if (player.scount == 7 || player.mcount == 7 || player.pcount == 7 || player.gcount == 7 || player.dcount ==7 ){
             result += 2000;
-        } else if (player.scount == 6 || player.mcount == 6 || player.pcount == 6 || player.gcount == 6 || player.dcount ==6){
+        } 
+        if (player.scount == 6 || player.mcount == 6 || player.pcount == 6 || player.gcount == 6 || player.dcount ==6){
             result += 1000;
-        } else if (player.scount == 5 || player.mcount == 5 || player.pcount == 5|| player.gcount == 5 || player.dcount ==5){
+        } 
+        if (player.scount == 5 || player.mcount == 5 || player.pcount == 5|| player.gcount == 5 || player.dcount ==5){
             result += 500;
-        } else if (player.scount == 4 || player.mcount == 4 || player.pcount == 4|| player.gcount == 4 || player.dcount ==4){
+        } 
+        if (player.scount == 4 || player.mcount == 4 || player.pcount == 4|| player.gcount == 4 || player.dcount ==4){
             result += 200;
-        } else if (player.scount == 3 || player.mcount == 3 || player.pcount == 3|| player.gcount == 3 || player.dcount ==3){
+        } 
+        if (player.scount == 3 || player.mcount == 3 || player.pcount == 3|| player.gcount == 3 || player.dcount ==3){
             result += 100;
-        } else if (player.scount == 8 || player.mcount == 8 || player.pcount == 8|| player.gcount == 8 || player.dcount ==8){
+        } 
+         if (player.scount == 8 || player.mcount == 8 || player.pcount == 8|| player.gcount == 8 || player.dcount ==8){
             result += 4000;
         }
         return result;

@@ -7,7 +7,7 @@ import pk.Start;
 import pk.Percentage;
 import pk.points_system;
 import pk.logging.GameLogger;
-import pk.Rst;
+import pk.Reset;
 
 
 public class PiratenKarpen {
@@ -35,7 +35,7 @@ public class PiratenKarpen {
 
 
             for (int i=0; i<amountofgames;i++){
-                Rst.reset(player1, player2);
+                Reset.reset(player1, player2);
 
             System.out.println("Game #" + (i+1));
 
