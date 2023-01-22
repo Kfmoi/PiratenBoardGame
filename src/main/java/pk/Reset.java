@@ -35,6 +35,7 @@ public class Reset {
         player.scount = 0;
         player.mcount = 0;
         player.pcount=0;
+        
         Start.playerscore = 0;
         player.skcheck =false;
     }

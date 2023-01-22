@@ -1,5 +1,7 @@
 package pk;
 
+import java.util.Scanner;
+
 public class Player {
     public int totalpoints = 0;
     public int totalscore = 0;
@@ -9,21 +11,18 @@ public class Player {
     public int mcount = 0;
     public int scount =0 ;
     public int pcount =0 ;
+    public int totalround = 0;
     public double wins;
 
     public boolean skcheck = false;
-    public String decision = "";
-
-    // Differentiates the different strategies
+    public int decision ;
     public static void pick(Player player1){
-        if(player1.decision == "Random" || player1.decision == "random"){
+        if(player1.decision == 1){
             Strategies.strategy1(player1);
-        } else if (player1.decision == "combo" || player1.decision == "Combo"){
+        } else {
             Strategies.strategy2(player1);
         }
     }
-
-    //Checks if 3 skulls have been rolled
     public boolean skullcheck(boolean skcheck){
         if (skcheck == true){
         System.out.println("Three skulls have been rolled");
@@ -31,4 +30,19 @@ public class Player {
     } else {
         return false;}
     }
-}
+
+    public boolean choice;
+    public static Scanner input = new Scanner(System.in);
+
+    public static void choose(Player player1){
+        
+            int ans = 2;
+            if(ans == 1){
+                player1.choice = true;
+            } else {
+                player1.choice= false;
+            }
+        
+    }
+    }
+

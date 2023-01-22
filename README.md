@@ -31,13 +31,16 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | x   | F01 | Roll eight dices  |  D |  12/01/23 |
 | x   | F02 | Keep track of points  |  D |  12/01/23 |
-| x   | F03 | end of game when three skulls are rolled | S | 10/12/23 |
-| x   | F04 | Reroll the random amount of dice subtracting the skulls rolled  |  D |  12/01/23 |
-| x   | F05 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 | 
-| x   | F06 | Keep rerolling if the points score isnt greater or equal to 6000| S | 11/12/23 | 
-| x   | F07 | 42 games are played.  |  D  | 12/01/23 |
-| x   | F08 | Calculate the stdout of the wins after all the games has been played  |  D |  12/01/23 |
-| x   | F09 | Set up the games for two players  |  D |  12/01/23 |
-| x   | F10 | Player wins, if they have more points(greater than 6000)| S | 11/12/23 | 
+| x   | F03 | end of turn when three skulls are rolled | S | 10/12/23 |
+| x   | F04 | Introduce the combo startegy | S | 10/12/23 |
+| x   | F05[F03] | Caclculate how many of each faces are rolled | S | 10/12/23 |
+| x   | F06 | Optimize to keep the the dice that will lead to highest points| S | 10/12/23 |
+| x   | F07 | Reroll the random amount of dice subtracting the skulls rolled and the dices that are kept |  D |  12/01/23 |
+| x   | F08 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 | 
+| x   | F09 | Keep rerolling if the points score isnt greater or equal to 6000| S | 11/12/23 | 
+| x   | F10 | 42 games are played.  |  D  | 12/01/23 |
+| x   | F12 | Calculate the stdout of the wins after all the games has been played  |  D |  12/01/23 |
+| x   | F13 | Set up the games for two players  |  D |  12/01/23 |
+| x   | F14 | Player wins, if they have more points(greater than 6000)| S | 11/12/23 | 
 | ... | ... | ... |
 

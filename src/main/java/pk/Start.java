@@ -40,7 +40,7 @@ public class Start {
     playerscore += points_system.fullchestcheck(player, points);
     playerscore += points_system.setcheck(player);
     playerscore += points_system.finalscore(points);
-    player.totalscore += playerscore;
+    player.totalround += playerscore;
     player.totalsk += skcount;
     System.out.println("\nRound points: " + playerscore);
     return res;

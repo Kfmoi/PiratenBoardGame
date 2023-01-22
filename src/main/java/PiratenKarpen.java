@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 import pk.Player;
@@ -27,11 +26,11 @@ public class PiratenKarpen {
             System.out.println("Welcome to Piraten Karpen Simulator!");
 
             
-
+            System.out.println("\nPress 1 to pick strategy 1, 2 for strategy 2");
             System.out.println("\n Player 1's strategy: ");
-            player1.decision = input.nextLine();
+            player1.decision = input.nextInt();
             System.out.println("\nPlayer 2's strategy: ");
-            player2.decision = input.nextLine();
+            player2.decision = input.nextInt();
 
 
             for (int i=0; i<amountofgames;i++){
@@ -41,6 +40,10 @@ public class PiratenKarpen {
 
             System.out.println("\n Player 1 rolls first");
             Player.pick(player1);
+
+            Start.skcount = 0;
+            Start.playerscore = 0;
+        
 
             System.out.println("\n Player 2's turn");
             Player.pick(player2);
