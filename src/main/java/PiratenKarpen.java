@@ -18,19 +18,21 @@ public class PiratenKarpen {
         
         Player player1 = new Player();
         Player player2 = new Player();
+        player1.decision = args[0];
+        player2.decision =args[1];
 
         try (Scanner input = new Scanner(System.in)) {
-            double amountofgames = 42;
+            double amountofgames = 1;
 
 
             System.out.println("Welcome to Piraten Karpen Simulator!");
 
             
-            System.out.println("\nPress 1 to pick strategy 1, 2 for strategy 2");
-            System.out.println("\n Player 1's strategy: ");
-            player1.decision = input.nextInt();
-            System.out.println("\nPlayer 2's strategy: ");
-            player2.decision = input.nextInt();
+           // System.out.println("\nPress 1 to pick strategy 1, 2 for strategy 2");
+            //System.out.println("\n Player 1's strategy: ");
+           // player1.decision = args[0];
+            //System.out.println("\nPlayer 2's strategy: ");
+            ///player2.decision = args[]
 
 
             for (int i=0; i<amountofgames;i++){
@@ -55,26 +57,14 @@ public class PiratenKarpen {
                 }
 
                 System.out.println("No player has reached over 6000 points");
-                Start.skcount = 0;
-                player1.dcount = 0;
-                player1.gcount =0;
-                player1.scount = 0;
-                player1.mcount = 0;
-                player1.pcount=0;
-                Start.playerscore = 0;
+                
                 System.out.println("Player 1 rerolling....");
-                player1.skcheck =false;
+                Reset.minireset(player1);
                 Player.pick(player1);
 
-                player2.dcount = 0;
-                player2.gcount =0;
-                player2.scount = 0;
-                player2.mcount = 0;
-                player2.pcount=0;
-                Start.skcount=0;
-                Start.playerscore = 0;
+                
                 System.out.println("Player 2 rerolling....");
-                player2.skcheck = false;
+                Reset.minireset(player2);
                 Player.pick(player2);
 
             }while ((player1.totalscore <6000) && (player2.totalscore<6000));

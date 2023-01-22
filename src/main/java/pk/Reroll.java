@@ -1,7 +1,4 @@
 package pk;
-
-import java.util.Scanner;
-
 public class Reroll {
     // Strategy 1: rerolling after the initial start
     public static void reroll(Player player1){
@@ -39,6 +36,7 @@ public class Reroll {
                     continue;} 
                     else if (player1.choice ==false) {
                         player1.totalscore += player1.totalround;
+                        System.out.println("Total score: " + player1.totalscore);
                         break;
                     }
                 
@@ -50,7 +48,6 @@ public class Reroll {
     public static void reroll2(Player player1){
         int k=1;
         int count = Start.skcount;
-        try (Scanner input = new Scanner(System.in)) {
             do {
                 if(player1.skullcheck(player1.skcheck)==true){
                     player1.totalround = 0;
@@ -91,10 +88,10 @@ public class Reroll {
                     continue;
                 }  else if (player1.choice ==false) {
                         player1.totalscore += player1.totalround;
+                        System.out.println("Total score: " + player1.totalscore);
                         break;
                     }
                } while (player1.skullcheck(player1.skcheck) == false);
         }
 
     }
-}

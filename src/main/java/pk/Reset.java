@@ -4,6 +4,8 @@ public class Reset {
     public static void reset(Player player1, Player player2){
         player1.totalscore = 0;
         player2.totalscore=0;
+        player1.totalround = 0;
+        player2.totalround=0;
         Start.skcount=0;
         Start.playerscore =0;
         player1.dcount = 0;
