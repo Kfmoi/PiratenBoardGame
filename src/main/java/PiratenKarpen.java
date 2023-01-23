@@ -1,12 +1,12 @@
 
-import java.util.Scanner;
 
 import pk.Player;
-import pk.Start;
 import pk.Percentage;
 import pk.points_system;
-import pk.logging.GameLogger;
+
 import pk.Reset;
+import pk.Start;
+import pk.logging.GameLogger;
 
 
 public class PiratenKarpen {
@@ -18,56 +18,66 @@ public class PiratenKarpen {
         
         Player player1 = new Player();
         Player player2 = new Player();
-        player1.decision = args[0];
-        player2.decision =args[1];
+        player1.decision = "random";
+        player2.decision ="random";
 
-        try (Scanner input = new Scanner(System.in)) {
             double amountofgames = 1;
 
 
             System.out.println("Welcome to Piraten Karpen Simulator!");
 
-            
-           // System.out.println("\nPress 1 to pick strategy 1, 2 for strategy 2");
-            //System.out.println("\n Player 1's strategy: ");
-           // player1.decision = args[0];
-            //System.out.println("\nPlayer 2's strategy: ");
-            ///player2.decision = args[]
-
 
             for (int i=0; i<amountofgames;i++){
                 Reset.reset(player1, player2);
+                System.out.println("Game #" + (i+1));
 
-            System.out.println("Game #" + (i+1));
+                System.out.println("\n Player 1 rolls first");
+                Player.pick(player1);
+                
+                Start.skcount = 0;
+                Start.playerscore = 0;
 
-            System.out.println("\n Player 1 rolls first");
-            Player.pick(player1);
-
-            Start.skcount = 0;
-            Start.playerscore = 0;
-        
-
-            System.out.println("\n Player 2's turn");
-            Player.pick(player2);
-
-
-            do {
-                if ((player1.totalscore >=6000) || (player2.totalscore>=6000)){
-                    break;
+                if (player1.totalscore >= 6000){
+                    System.out.println("Final points: "+ player1.totalpoints);
+                    System.out.println("6000 has been reached!!!!");
+                    player1.finalturn = true;
+                    System.out.println("Player 2's final turn");
+                    Player.last(player1, player2);
+                }else {
+                System.out.println("\n Player 2's turn");
+                Player.pick(player2);
                 }
 
-                System.out.println("No player has reached over 6000 points");
+            do {
                 
-                System.out.println("Player 1 rerolling....");
                 Reset.minireset(player1);
+                if (player2.totalscore >= 6000){
+                    System.out.println("Final Score: "+ player2.totalpoints);
+                    System.out.println("6000 has been reached!!!!");
+                    player2.finalturn = true;
+                    System.out.println("Player 1's final turn");
+                    Player.last(player2, player1);
+                    break;
+                }else {
+                System.out.println("No player has reached over 6000 points");
+                System.out.println("Player 1 rerolling....");
                 Player.pick(player1);
-
+                }
                 
-                System.out.println("Player 2 rerolling....");
+                
                 Reset.minireset(player2);
+                if (player1.totalscore >= 6000){
+                    System.out.println("Final Score: "+ player1.totalscore);
+                    System.out.println("6000 has been reached!!!!");
+                    player1.finalturn = true;
+                    System.out.println("Player 2's final turn");
+                    Player.last(player1, player2);
+                    break;
+                }else {
+                System.out.println("Player 2 rerolling....");
                 Player.pick(player2);
-
-            }while ((player1.totalscore <6000) && (player2.totalscore<6000));
+                }
+            }while (player1.finalturn == false|| player2.finalturn ==false);
 
             System.out.println("\nFinal Points:");
             System.out.println("\n Player 1:" + player1.totalscore);
@@ -76,8 +86,10 @@ public class PiratenKarpen {
             points_system.results(player1, player2);
             }
 
-            System.out.println("\n Player 1's' total wins: " + player1.wins);
-            System.out.println("\n Player 2's' total wins: " + player2.wins);
+            //System.out.println("\n Player 1's' total wins: " + player1.wins);
+            //System.out.println("\n Player 2's' total wins: " + player2.wins);
+
+            GameLogger.debuglog("\n Player 1's' total wins: " + player1.wins);
 
             double stdout1 = Percentage.stdout(player1.wins,amountofgames);
             double stdout2 = Percentage.stdout(player2.wins, amountofgames);
@@ -92,5 +104,4 @@ public class PiratenKarpen {
         
 
 
-}
 }

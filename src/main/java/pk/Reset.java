@@ -28,6 +28,8 @@ public class Reset {
         player2.scount = 0;
         player2.mcount = 0;
         player2.pcount=0;
+        player1.finalturn = false;
+        player2.finalturn =false;
     }
 
     public static void minireset(Player player){

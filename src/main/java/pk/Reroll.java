@@ -6,8 +6,14 @@ public class Reroll {
             int k=1;
             do {
                 if(player1.skullcheck(player1.skcheck)==true){
-                    player1.totalround = 0;
-                    System.out.println("Final points: "+ player1.totalpoints);
+                    break;
+                }
+                if (player1.totalpoints >= 6000){
+                    player1.finalturn = true;
+                    break;
+                }
+                Player.choose(player1);
+                if (player1.choice ==false) {
                     break;
                 }
 
@@ -24,21 +30,6 @@ public class Reroll {
    
                 System.out.println("Round #"+ k+ " is done");
                 k++;
-                if(player1.skullcheck(player1.skcheck)==true){
-                    player1.totalround = 0;
-                    System.out.println("Final points: "+ player1.totalpoints);
-                    break;
-                }
-
-                System.out.println("Press 1 to continue, Press 2 to keep ur rolls");
-                Player.choose(player1);
-                if (player1.choice == true){
-                    continue;} 
-                    else if (player1.choice ==false) {
-                        player1.totalscore += player1.totalround;
-                        System.out.println("Total score: " + player1.totalscore);
-                        break;
-                    }
                 
                } while (player1.skullcheck(player1.skcheck) == false);
         
@@ -50,25 +41,34 @@ public class Reroll {
         int count = Start.skcount;
             do {
                 if(player1.skullcheck(player1.skcheck)==true){
-                    player1.totalround = 0;
                     System.out.println("Final points: "+ player1.totalpoints);
                     break;
                 }
-                else if (player1.dcount > 1){
+                if (player1.totalpoints >= 6000){
+                    player1.finalturn = true;
+                    break;
+                }
+                Player.choose(player1);
+                if (player1.choice ==false) {
+                    break;
+                }
+
+                if (player1.dcount > 1){
                     count+= player1.dcount;
                 } else if (player1.gcount > 1){
                     count += player1.gcount;
-                } else if (player1.mcount > 2){
+                } else if (player1.mcount > 3){
                     count+= player1.mcount;
-                }else if (player1.pcount > 2){
+                }else if (player1.pcount > 3){
                     count+= player1.pcount;
-                }else if (player1.scount > 2){
+                }else if (player1.scount > 3){
                     count+= player1.scount;
                 }
 
                 if (count >= 6){
                     break;
                 }
+                Start.playerscore = 0;
 
                 int num = Random_num.randomnum(count);
                 System.out.println("\nNumber of rolls: "+ num);
@@ -76,21 +76,7 @@ public class Reroll {
    
                 System.out.println("Round #"+ k+ " is done");
                 k++;
-                if(player1.skullcheck(player1.skcheck)==true){
-                    player1.totalround = 0;
-                    System.out.println("Final points: "+ player1.totalpoints);
-                    break;
-                }
 
-                System.out.println("Press 1 to continue, Press 2 to keep ur rolls");
-                Player.choose(player1);
-                if (player1.choice == true ){
-                    continue;
-                }  else if (player1.choice ==false) {
-                        player1.totalscore += player1.totalround;
-                        System.out.println("Total score: " + player1.totalscore);
-                        break;
-                    }
                } while (player1.skullcheck(player1.skcheck) == false);
         }
 

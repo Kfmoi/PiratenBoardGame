@@ -1,7 +1,5 @@
 package pk;
 
-import java.util.Scanner;
-
 public class Player {
     public int totalpoints = 0;
     public int totalscore = 0;
@@ -30,16 +28,23 @@ public class Player {
         return false;}
     }
     public boolean choice;
-    public static Scanner input = new Scanner(System.in);
+    public boolean finalturn;
+
     public static void choose(Player player1){
         
-            int ans = input.nextInt();
-            if(ans == 1){
-                player1.choice = true;
+            if(Start.skcount == 2){
+                player1.choice = false;
             } else {
-                player1.choice= false;
+                player1.choice= true;
             }
         
+    }
+
+    public static void last (Player player1, Player player2){
+        if (player1.finalturn == true){
+            Player.pick(player2);
+        } 
+
     }
     }
 
