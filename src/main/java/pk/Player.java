@@ -1,5 +1,7 @@
 package pk;
 
+import pk.logging.logging;
+
 public class Player {
     public int totalpoints = 0;
     public int totalscore = 0;
@@ -22,7 +24,7 @@ public class Player {
     }
     public boolean skullcheck(boolean skcheck){
         if (skcheck == true){
-        System.out.println("Three skulls have been rolled");
+        logging.debug("Three skulls have been rolled");
         return true;
     } else {
         return false;}

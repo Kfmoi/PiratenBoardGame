@@ -1,4 +1,7 @@
 package pk;
+
+import pk.logging.logging;
+
 public class Reroll {
     // Strategy 1: rerolling after the initial start
     public static void reroll(Player player1){
@@ -6,9 +9,10 @@ public class Reroll {
             int k=1;
             do {
                 if(player1.skullcheck(player1.skcheck)==true){
+                    
                     break;
                 }
-                if (player1.totalpoints >= 6000){
+                if (player1.totalscore >= 6000){
                     player1.finalturn = true;
                     break;
                 }
@@ -25,10 +29,10 @@ public class Reroll {
                 player1.pcount=0;
    
                 int num = Random_num.randomnum(Start.skcount);
-                System.out.println("\nNumber of rolls: "+ num);
+                logging.debug("\nNumber of rolls: "+ num);
                 player1.skcheck =Start.firstroll(num,player1);
    
-                System.out.println("Round #"+ k+ " is done");
+                logging.debug("Round #"+ k+ " is done");
                 k++;
                 
                } while (player1.skullcheck(player1.skcheck) == false);
@@ -41,10 +45,9 @@ public class Reroll {
         int count = Start.skcount;
             do {
                 if(player1.skullcheck(player1.skcheck)==true){
-                    System.out.println("Final points: "+ player1.totalpoints);
                     break;
                 }
-                if (player1.totalpoints >= 6000){
+                if (player1.totalscore >= 6000){
                     player1.finalturn = true;
                     break;
                 }
@@ -71,10 +74,9 @@ public class Reroll {
                 Start.playerscore = 0;
 
                 int num = Random_num.randomnum(count);
-                System.out.println("\nNumber of rolls: "+ num);
+                logging.debug("\nNumber of rolls: "+ num);
                 player1.skcheck =Start.firstroll(num,player1);
-   
-                System.out.println("Round #"+ k+ " is done");
+                logging.debug("Round #"+ k+ " is done");
                 k++;
 
                } while (player1.skullcheck(player1.skcheck) == false);

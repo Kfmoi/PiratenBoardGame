@@ -1,6 +1,6 @@
 package pk;
 
-
+import pk.logging.logging;
 
 public class Start {
     public static int playerscore =0;
@@ -18,7 +18,7 @@ public class Start {
 
 
         for(int j =1; j<=num; j++){
-            System.out.println("\nI'm rolling a dice #" + (j));
+            logging.debug("\nI'm rolling a dice #" + (j));
             results = myDice.roll();
             skcount += skulls.count(results);
             player.gcount += points_system.goldcount(results);
@@ -27,7 +27,7 @@ public class Start {
             player.mcount += Facecount.monkeycount(results);
             player.scount += Facecount.sabercount(results);
             points += points_system.addpoints(results);
-            System.out.println(results); 
+            logging.debug(results.name());
             res = skulls.check(skcount); 
     }
 
@@ -35,15 +35,15 @@ public class Start {
 
     
 
-    System.out.println("\nNumber of skulls: " + skcount);
-    System.out.println("Number of points rolled:" + points);
+    logging.debug("\nNumber of skulls: " + skcount);
+    logging.debug("Number of points rolled:" + points);
     playerscore += points_system.fullchestcheck(player, points);
     playerscore += points_system.setcheck(player);
     playerscore += points_system.finalscore(points);
-    player.totalscore += playerscore;
+    player.totalround += playerscore;
     player.totalsk += skcount;
-    System.out.println("\nRound points: " + playerscore);
-    System.out.println("Total Points: " + player.totalscore);
+    logging.debug("\nRound points: " + playerscore);
+    logging.debug("Total Points: " + player.totalscore);
     return res;
 }
 

@@ -6,14 +6,14 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.apache.logging.log4j.util.StackLocator;;
 
-public class GameLogger {
+public class logging {
 
-    public static boolean SHOULD_LOG_DEBUG = System.getProperties().containsKey("TRACE");
+    public static boolean SHOULD_LOG_DEBUG = System.getProperties().containsKey("DEBUG");
 
-    private GameLogger() {}
+    private logging() {}
 
-    public static void debuglog(String message){
-        if (GameLogger.SHOULD_LOG_DEBUG){
+    public static void debug(String message){
+        if (logging.SHOULD_LOG_DEBUG){
             Logger logger = LogManager.getLogger(StackLocator.getInstance().getCallerClass(2));
             Configurator.setLevel(logger, Level.DEBUG);
             logger.debug(message);
