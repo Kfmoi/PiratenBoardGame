@@ -14,7 +14,9 @@
   * To package the project as a turn-key artefact:
     * `mvn package`
   * To run the packaged delivery:
-    * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
+    * `java -jar target/piraten-karpen-jar-with-dependencies.jar "strategy1" "strategy2"` 
+  * To run use trace:
+    * `mvn -q -D TRACK exec:java`
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
@@ -29,18 +31,21 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 
 | MVP? | Id  | Feature  | Status  |  Started  | Delivered |
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
-| x   | F01 | Roll eight dices  |  D |  12/01/23 |
-| x   | F02 | Keep track of points  |  D |  12/01/23 |
-| x   | F03 | end of turn when three skulls are rolled | S | 10/12/23 |
-| x   | F04 | Introduce the combo startegy | S | 10/12/23 |
-| x   | F05[F03] | Caclculate how many of each faces are rolled | S | 10/12/23 |
-| x   | F06 | Optimize to keep the the dice that will lead to highest points| S | 10/12/23 |
-| x   | F07 | Reroll the random amount of dice subtracting the skulls rolled and the dices that are kept |  D |  12/01/23 |
-| x   | F08 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 | 
-| x   | F09 | Keep rerolling if the points score isnt greater or equal to 6000| S | 11/12/23 | 
-| x   | F10 | 42 games are played.  |  D  | 12/01/23 |
-| x   | F12 | Calculate the stdout of the wins after all the games has been played  |  D |  12/01/23 |
-| x   | F13 | Set up the games for two players  |  D |  12/01/23 |
-| x   | F14 | Player wins, if they have more points(greater than 6000)| S | 11/12/23 | 
+| x   | F01 | Read player strategies  |  D |  12/01/23 | 23/01/23
+| x   | F02 | Roll eight dices  |  D |  12/01/23 | 16/01/23
+| x   | F03 | Keep track of points  |  D |  12/01/23 | 16/01/23
+| x   | F04 | Keep track of any sets  |  D |  12/01/23 | 23/01/23
+| x   | F05 | end of turn when three skulls are rolled | D | 10/12/23 | 16/01/23
+| x   | F06 | Check for combo startegy | D | 10/12/23 | 23/01/23
+| x   | F07[F03] | Caclculate how many of each faces are rolled | S | 10/12/23 | 16/01/23
+| x   | F08 | Optimize to keep the the dice that will lead to highest points| S | 10/12/23 | 23/01/23
+| x   | F09 | Reroll the random amount of dice subtracting the skulls rolled and the dices that are kept |  D |  12/01/23 | 16/01/23
+| x   | F10 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 |  16/01/23
+| x   | F11 | Keep rerolling if the points score isnt greater or equal to 6000| D | 11/12/23 | 16/01/23
+| x   | F12 | 42 games are played.  |  D  | 12/01/23 | 16/01/23
+| x   | F13 | Calculate the stdout of the wins after all the games has been played  |  D |  12/01/23 | 16/01/23
+| x   | F14 | Set up the games for two players  |  D |  12/01/23 | 16/01/23
+| x   | F15 | Player wins, if they have more points(greater than 6000)| D | 11/12/23 | 16/01/23 
+| x   | F16 | Player plays last turn when his opponent reaches 6000 first  |  D |  12/01/23 | 23/01/23
 | ... | ... | ... |
 

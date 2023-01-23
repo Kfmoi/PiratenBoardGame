@@ -1,7 +1,5 @@
 package pk;
 
-import pk.logging.logging;
-
 public class points_system {
 
     // Adds points to a counter whenever a gold or diamond is rolled
@@ -26,12 +24,12 @@ public class points_system {
 
         if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
             player1.wins++;
-            logging.debug("\n Player 1 Wins!!!");
+            System.out.println("Player 1 Wins!!!");
         } else if ((player2.totalscore > player1.totalscore) && player2.totalscore >=6000){
-            logging.debug("\n Player 2 Wins!!!");
+            System.out.println("Player 2 Wins!!!");
             player2.wins++;
         } else {
-            logging.debug("\nTie Game");
+            System.out.println("Tie Game");
         }
     }
 

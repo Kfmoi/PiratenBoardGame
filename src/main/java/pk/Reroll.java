@@ -9,7 +9,6 @@ public class Reroll {
             int k=1;
             do {
                 if(player1.skullcheck(player1.skcheck)==true){
-                    
                     break;
                 }
                 if (player1.totalscore >= 6000){
@@ -32,7 +31,7 @@ public class Reroll {
                 logging.debug("\nNumber of rolls: "+ num);
                 player1.skcheck =Start.firstroll(num,player1);
    
-                logging.debug("Round #"+ k+ " is done");
+                logging.debug("Round #"+k+ " is done");
                 k++;
                 
                } while (player1.skullcheck(player1.skcheck) == false);
@@ -76,7 +75,8 @@ public class Reroll {
                 int num = Random_num.randomnum(count);
                 logging.debug("\nNumber of rolls: "+ num);
                 player1.skcheck =Start.firstroll(num,player1);
-                logging.debug("Round #"+ k+ " is done");
+   
+                logging.debug("Round #"+k+ " is done");
                 k++;
 
                } while (player1.skullcheck(player1.skcheck) == false);

@@ -3,7 +3,6 @@ package pk;
 import pk.logging.logging;
 
 public class Player {
-    public int totalpoints = 0;
     public int totalscore = 0;
     public int totalsk = 0;
     public int gcount = 0;
@@ -11,10 +10,13 @@ public class Player {
     public int mcount = 0;
     public int scount =0 ;
     public int pcount =0 ;
-    public int totalround = 0;
     public double wins;
     public boolean skcheck = false;
-    public String decision ;
+    public String decision;
+    public boolean choice;
+    public boolean finalturn;
+
+
     public static void pick(Player player1){
         if(player1.decision == "Random"){
             Strategies.strategy1(player1);
@@ -22,6 +24,7 @@ public class Player {
             Strategies.strategy2(player1);
         }
     }
+
     public boolean skullcheck(boolean skcheck){
         if (skcheck == true){
         logging.debug("Three skulls have been rolled");
@@ -29,8 +32,6 @@ public class Player {
     } else {
         return false;}
     }
-    public boolean choice;
-    public boolean finalturn;
 
     public static void choose(Player player1){
         

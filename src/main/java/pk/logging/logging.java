@@ -8,7 +8,7 @@ import org.apache.logging.log4j.util.StackLocator;;
 
 public class logging {
 
-    public static boolean SHOULD_LOG_DEBUG = System.getProperties().containsKey("DEBUG");
+    public static boolean SHOULD_LOG_DEBUG = System.getProperties().containsKey("TRACK");
 
     private logging() {}
 

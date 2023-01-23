@@ -18,7 +18,7 @@ public class Start {
 
 
         for(int j =1; j<=num; j++){
-            logging.debug("\nI'm rolling a dice #" + (j));
+            logging.debug("\nDice #"+ j);
             results = myDice.roll();
             skcount += skulls.count(results);
             player.gcount += points_system.goldcount(results);
@@ -33,17 +33,14 @@ public class Start {
 
 
 
-    
-
     logging.debug("\nNumber of skulls: " + skcount);
     logging.debug("Number of points rolled:" + points);
     playerscore += points_system.fullchestcheck(player, points);
     playerscore += points_system.setcheck(player);
     playerscore += points_system.finalscore(points);
-    player.totalround += playerscore;
+    player.totalscore += playerscore;
     player.totalsk += skcount;
     logging.debug("\nRound points: " + playerscore);
-    logging.debug("Total Points: " + player.totalscore);
     return res;
 }
 
