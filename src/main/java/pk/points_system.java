@@ -65,21 +65,104 @@ public class points_system {
     }
 
     // Combo checks
-    public static int setcheck (Player player){
+    public static int monkeyset (Player player){
         int result = 0;
-        if (player.scount == 7 || player.mcount == 7 || player.pcount == 7 || player.gcount == 7 || player.dcount ==7 ){
+        if ( player.msaved == 7 ){
             result += 2000;
-        } else if (player.scount == 6 || player.mcount == 6 || player.pcount == 6 || player.gcount == 6 || player.dcount ==6){
+        } else if ( player.msaved == 6 ){
             result += 1000;
-        } else if (player.scount == 5 || player.mcount == 5 || player.pcount == 5|| player.gcount == 5 || player.dcount ==5){
+        } else if ( player.msaved == 5 ){
             result += 500;
-        } else if (player.scount == 4 || player.mcount == 4 || player.pcount == 4|| player.gcount == 4 || player.dcount ==4){
+        } else if ( player.msaved == 4){
             result += 200;
-        } else if (player.scount == 3 || player.mcount == 3 || player.pcount == 3|| player.gcount == 3 || player.dcount ==3){
+        } else if (player.msaved == 3){
             result += 100;
-        } else if (player.scount == 8 || player.mcount == 8 || player.pcount == 8|| player.gcount == 8 || player.dcount ==8){
+        } else if (player.msaved == 8){
             result += 4000;
         }
-        return result;
+        
+    
+    
+    return result;
+}
+public static int parrotset (Player player){
+    int result = 0;
+    if ( player.psaved == 7 ){
+        result += 2000;
+    } else if ( player.psaved == 6 ){
+        result += 1000;
+    } else if ( player.psaved == 5 ){
+        result += 500;
+    } else if ( player.psaved == 4){
+        result += 200;
+    } else if (player.psaved == 3){
+        result += 100;
+    } else if (player.psaved == 8){
+        result += 4000;
     }
+    
+
+
+return result;
+}
+public static int sabreset (Player player){
+    int result = 0;
+    if ( player.ssaved == 7 ){
+        result += 2000;
+    } else if ( player.ssaved == 6 ){
+        result += 1000;
+    } else if ( player.ssaved == 5 ){
+        result += 500;
+    } else if ( player.ssaved == 4){
+        result += 200;
+    } else if (player.ssaved == 3){
+        result += 100;
+    } else if (player.ssaved == 8){
+        result += 4000;
+    }
+    
+
+
+return result;
+}
+public static int diamondset (Player player){
+    int result = 0;
+    if ( player.dsaved == 7 ){
+        result += 2000;
+    } else if ( player.dsaved == 6 ){
+        result += 1000;
+    } else if ( player.dsaved == 5 ){
+        result += 500;
+    } else if ( player.dsaved == 4){
+        result += 200;
+    } else if (player.dsaved == 3){
+        result += 100;
+    } else if (player.dsaved == 8){
+        result += 4000;
+    }
+    
+
+
+return result;
+}
+public static int goldset (Player player){
+    int result = 0;
+    if ( player.gsaved == 7 ){
+        result += 2000;
+    } else if ( player.gsaved == 6 ){
+        result += 1000;
+    } else if ( player.gsaved == 5 ){
+        result += 500;
+    } else if ( player.gsaved == 4){
+        result += 200;
+    } else if (player.gsaved == 3){
+        result += 100;
+    } else if (player.gsaved == 8){
+        result += 4000;
+    }
+    
+
+
+return result;
+}
 }

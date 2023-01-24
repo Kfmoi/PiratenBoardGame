@@ -26,6 +26,21 @@ public class Reset {
         player2.pcount=0;
         player1.finalturn = false;
         player2.finalturn =false;
+        player1.card ="";
+        player1.card = "";
+        player1.turnscore=0;
+        player2.turnscore =0;
+        player1.ssaved = 0;
+        player1.psaved = 0;
+        player1.msaved = 0;
+        player1.gsaved = 0;
+        player1.dsaved = 0;
+        player2.ssaved = 0;
+        player2.psaved = 0;
+        player2.msaved = 0;
+        player2.gsaved = 0;
+        player2.dsaved = 0;
+        Start.count =0;
     }
 
     public static void minireset(Player player){
@@ -35,6 +50,7 @@ public class Reset {
         player.scount = 0;
         player.mcount = 0;
         player.pcount=0;
+        Start.count =0;
         
         Start.playerscore = 0;
         player.skcheck =false;

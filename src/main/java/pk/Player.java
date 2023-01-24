@@ -10,15 +10,26 @@ public class Player {
     public int mcount = 0;
     public int scount =0 ;
     public int pcount =0 ;
+    public int ssaved = 0;
+    public int msaved = 0;
+    public int dsaved = 0;
+    public int gsaved = 0;
+    public int psaved = 0;
     public double wins;
     public boolean skcheck = false;
     public String decision;
     public boolean choice;
     public boolean finalturn;
+    public String card;
+    public int mpcount =0;
+    public int roundscore=0;
+    public int turnscore=0;
+    public boolean firstroll;
+    public int sabresneeded = 0;
 
 
     public static void pick(Player player1){
-        if(player1.decision == "Random"){
+        if(player1.decision == "Random" || player1.decision == "random"){
             Strategies.strategy1(player1);
         } else {
             Strategies.strategy2(player1);
