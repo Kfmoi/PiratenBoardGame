@@ -2,31 +2,19 @@ package pk.logging;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.FileWriter;
-import java.io.IOException;
-
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
-import org.apache.logging.log4j.util.StackLocator;;
 
 public class logging {
 
-    public static boolean SHOULD_LOG_DEBUG = System.getProperties().containsKey("TRACK");
+    public static boolean log = System.getProperties().containsKey("TRACK");
 
-    private logging() {}
-
+    private static final Logger logger = LogManager.getLogger(Debug.class);
     public static void debug(String message){
-        if (logging.SHOULD_LOG_DEBUG){
-            Logger logger = LogManager.getLogger(StackLocator.getInstance().getCallerClass(2));
+        if (logging.log){
             Configurator.setLevel(logger, Level.DEBUG);
-            try {
-                FileWriter writer = new FileWriter("debug.txt", true);
-                writer.write(message + "\n");
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            logger.debug(message);
+            
             
         }
     }

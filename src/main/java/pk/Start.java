@@ -39,7 +39,6 @@ public class Start {
             player.scount += Facecount.sabercount(results);
             points += points_system.addpoints(results);
             logging.debug(results.name());
-            System.out.println(results);
             res = skulls.check(skcount); 
     }
     player.dsaved = player.dcount;
@@ -55,9 +54,7 @@ public class Start {
 
 
     logging.debug("\nNumber of skulls: " + skcount);
-    System.out.println("\nNumber of skulls: " + skcount);
     logging.debug("Number of points rolled:" + points);
-    System.out.println("Number of points rolled:" + points);
     playerscore += points_system.fullchestcheck(player, points);
     playerscore += points_system.goldset(player);
 
@@ -76,8 +73,7 @@ public class Start {
     player.totalscore += playerscore;
     player.totalsk += skcount;
     logging.debug("\nRound score: " + playerscore);
-    System.out.println("\nRound score: " + playerscore);
-    System.out.println("Total Score: " + player.totalscore);
+    logging.debug("Total Score: " + player.totalscore);
     
     player.dcount = 0;
     player.scount=0;
@@ -113,7 +109,6 @@ public class Start {
         player.scount += Facecount.sabercount(results);
         points += points_system.addpoints(results);
         logging.debug(results.name());
-        System.out.println(results);
         res = skulls.check(skcount); 
 }
 count =skcount;
@@ -156,10 +151,9 @@ if (player.mcount >= 3){
 
 
 
-logging.debug("\nNumber of skulls: " + skcount);
-    System.out.println("\nNumber of skulls: " + skcount);
+    logging.debug("\nNumber of skulls: " + skcount);
     logging.debug("Number of points rolled:" + points);
-    System.out.println("Number of points rolled:" + points);
+
     playerscore += points_system.fullchestcheck(player, points);   
     playerscore += points_system.goldset(player);
     playerscore += points_system.diamondset(player);
@@ -178,8 +172,7 @@ if (res == true){
 player.totalscore += playerscore;
     player.totalsk += skcount;
     logging.debug("\nRound points: " + playerscore);
-    System.out.println("\nRound points: " + playerscore);
-    System.out.println("Total score:" + player.totalscore);
+    logging.debug("Total score:" + player.totalscore);
     player.dcount = 0;
     player.scount=0;
     player.pcount=0;
@@ -209,7 +202,6 @@ return res;
         player.scount += Facecount.sabercount(results);
         points += points_system.addpoints(results);
         logging.debug(results.name());
-        System.out.println(results);
         res = skulls.check(skcount); 
 }
 count =skcount;
@@ -222,9 +214,7 @@ player.dsaved = player.dcount;
 
 
 logging.debug("\nNumber of skulls: " + skcount);
-System.out.println("\nNumber of skulls: " + skcount);
 logging.debug("Number of points rolled:" + points);
-System.out.println("Number of points rolled:" + points);
 
 playerscore += points_system.fullchestcheck(player, points);
 playerscore += points_system.monkeyset(player);
@@ -248,9 +238,7 @@ if (res == true){
 player.turnscore += playerscore;
 player.totalsk += skcount;
 logging.debug("\nRound Score: " + playerscore);
-System.out.println("\nRound Score: " + playerscore);
 logging.debug("Final Score: " +player.totalscore);
-System.out.println("Final Score: " +player.totalscore);
 
 player.mcount = 0;
 player.pcount = 0;
