@@ -14,6 +14,8 @@ public class Reset {
         player2.skcheck =false;
         player1.totalsk = 0;
         player2.totalsk = 0;
+        player1.mpcount = 0;
+        player2.mpcount =0;
         player1.dcount = 0;
         player1.gcount =0;
         player1.scount = 0;
@@ -51,6 +53,12 @@ public class Reset {
         player.mcount = 0;
         player.pcount=0;
         Start.count =0;
+        player.ssaved = 0;
+        player.psaved = 0;
+        player.msaved = 0;
+        player.gsaved = 0;
+        player.dsaved = 0;
+        player.mpcount =0;
         
         Start.playerscore = 0;
         player.skcheck =false;

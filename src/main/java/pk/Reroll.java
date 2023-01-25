@@ -67,8 +67,6 @@ public class Reroll {
                } while (player1.skullcheck(player1.skcheck) == false);
         }
     
-    
-
     public static void reroll3(Player player1){
         int k=1;
         int count = Start.skcount;
@@ -85,6 +83,9 @@ public class Reroll {
                     if (player1.ssaved >= 1){
                         count+= player1.ssaved;
                     }
+                    if (count >= 6){
+                        break;
+                    }
                     Start.playerscore = 0;
                     int num = Random_num.randomnum(count);
                     logging.debug("\nNumber of rolls: "+ num);
@@ -99,6 +100,9 @@ public class Reroll {
                     break;
                 }
                     Start.playerscore = 0;
+                    if (count >= 6){
+                        break;
+                    }
 
                     int num = Random_num.randomnum(count);
                     logging.debug("\nNumber of rolls: "+ num);
@@ -108,9 +112,6 @@ public class Reroll {
                     k++; 
                 }
 
-                if (count >= 6){
-                    break;
-                }
 
                } while (player1.skullcheck(player1.skcheck) == false);
         }

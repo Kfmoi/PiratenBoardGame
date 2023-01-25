@@ -29,8 +29,13 @@ public class Start {
             skcount += skulls.count(results);
             player.gcount += points_system.goldcount(results);
             player.dcount += points_system.diamondcount(results);
-            player.pcount += Facecount.parrotcount(results);
-            player.mcount += Facecount.monkeycount(results);
+            if (player.card == "nop"){
+                player.pcount += Facecount.parrotcount(results);
+                player.mcount += Facecount.monkeycount(results);
+            } else {
+                player.mpcount += Facecount.parrotcount(results);
+                player.mpcount += Facecount.monkeycount(results);
+            }
             player.scount += Facecount.sabercount(results);
             points += points_system.addpoints(results);
             logging.debug(results.name());
@@ -40,8 +45,13 @@ public class Start {
     player.dsaved = player.dcount;
     player.ssaved = player.scount;
     player.gsaved = player.gcount;
-    player.msaved = player.mcount;
-    player.psaved = player.pcount;
+    if (player.card == "nop"){
+        player.msaved = player.mcount;
+        player.psaved = player.pcount;
+    }
+    else {
+        player.mpsaved = player.mpcount;
+    }
 
 
     logging.debug("\nNumber of skulls: " + skcount);
@@ -49,9 +59,14 @@ public class Start {
     logging.debug("Number of points rolled:" + points);
     System.out.println("Number of points rolled:" + points);
     playerscore += points_system.fullchestcheck(player, points);
-    playerscore += points_system.monkeyset(player);
     playerscore += points_system.goldset(player);
-    playerscore += points_system.parrotset(player);
+
+    if (player.card == "nop"){
+        playerscore += points_system.parrotset(player);
+        playerscore += points_system.monkeyset(player);
+    } else {
+        playerscore += points_system.monkeybusiness(player);
+    }
     playerscore += points_system.diamondset(player);
     playerscore += points_system.sabreset(player);
     playerscore += points_system.finalscore(points);
@@ -60,13 +75,16 @@ public class Start {
     }
     player.totalscore += playerscore;
     player.totalsk += skcount;
-    logging.debug("\nRound points: " + playerscore);
+    logging.debug("\nRound score: " + playerscore);
+    System.out.println("\nRound score: " + playerscore);
+    System.out.println("Total Score: " + player.totalscore);
     
     player.dcount = 0;
     player.scount=0;
     player.pcount=0;
     player.gcount=0;
     player.mcount=0;
+    player.mpcount=0;
     return res;
 }
 
@@ -85,8 +103,13 @@ public class Start {
         skcount += skulls.count(results);
         player.gcount += points_system.goldcount(results);
         player.dcount += points_system.diamondcount(results);
-        player.pcount += Facecount.parrotcount(results);
-        player.mcount += Facecount.monkeycount(results);
+        if (player.card == "nop"){
+            player.pcount += Facecount.parrotcount(results);
+            player.mcount += Facecount.monkeycount(results);
+        } else {
+            player.mpcount += Facecount.parrotcount(results);
+            player.mpcount += Facecount.monkeycount(results);
+        }
         player.scount += Facecount.sabercount(results);
         points += points_system.addpoints(results);
         logging.debug(results.name());
@@ -94,7 +117,8 @@ public class Start {
         res = skulls.check(skcount); 
 }
 count =skcount;
-if (player.dcount >= 1){
+if (player.card == "nop"){
+    if (player.dcount >= 1){
     player.dsaved+= player.dcount;
     count += player.dsaved;
 } if (player.gcount >= 1){
@@ -111,6 +135,24 @@ if (player.mcount >= 3){
     player.ssaved+= player.scount;
     count += player.ssaved;
 }
+} else{
+    if (player.dcount >= 1){
+        player.dsaved+= player.dcount;
+        count += player.dsaved;
+    } 
+    if (player.gcount >= 1){
+        player.gsaved += player.gcount;
+        count += player.gsaved;
+    } 
+    if (player.mpcount >= 2){
+        player.mpcount+= player.mpcount;
+        count += player.mpsaved;
+    }   
+    if (player.scount >= 3){
+        player.ssaved+= player.scount;
+        count += player.ssaved;
+}
+}
 
 
 
@@ -118,12 +160,16 @@ logging.debug("\nNumber of skulls: " + skcount);
     System.out.println("\nNumber of skulls: " + skcount);
     logging.debug("Number of points rolled:" + points);
     System.out.println("Number of points rolled:" + points);
-    playerscore += points_system.fullchestcheck(player, points);
-    playerscore += points_system.monkeyset(player);
+    playerscore += points_system.fullchestcheck(player, points);   
     playerscore += points_system.goldset(player);
-    playerscore += points_system.parrotset(player);
     playerscore += points_system.diamondset(player);
     playerscore += points_system.sabreset(player);
+    if (player.card == "nop"){
+        playerscore += points_system.parrotset(player);
+        playerscore += points_system.monkeyset(player);
+    } else {
+        playerscore += points_system.monkeybusiness(player);
+    }
     playerscore += points_system.finalscore(points);
 if (res == true){
     playerscore =0;
@@ -132,6 +178,8 @@ if (res == true){
 player.totalscore += playerscore;
     player.totalsk += skcount;
     logging.debug("\nRound points: " + playerscore);
+    System.out.println("\nRound points: " + playerscore);
+    System.out.println("Total score:" + player.totalscore);
     player.dcount = 0;
     player.scount=0;
     player.pcount=0;
@@ -139,8 +187,9 @@ player.totalscore += playerscore;
     player.mcount=0;
 return res;
 }
+    
 
-public static boolean firstroll3(int num, Player player){
+    public static boolean firstroll3(int num, Player player){
     
     Faces results = null;
     boolean res =false;

@@ -4,8 +4,11 @@ import java.util.Random;
 public class Cards {
     public static String[]Carddeck(){
         String [] carddeck = new String[35];
-        for (int i=0; i<=28; i++){
+        for (int i=0; i<=24; i++){
             carddeck[i] = "nop";
+        }
+        for (int j=25; j<=28; j++){
+            carddeck[j] = "Monkey Business";
         }
         carddeck[29] = "2 Sea Battle";
         carddeck[30] = "2 Sea Battle";

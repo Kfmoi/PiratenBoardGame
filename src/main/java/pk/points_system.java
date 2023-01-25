@@ -85,7 +85,8 @@ public class points_system {
     
     return result;
 }
-public static int parrotset (Player player){
+
+    public static int parrotset (Player player){
     int result = 0;
     if ( player.psaved == 7 ){
         result += 2000;
@@ -105,7 +106,8 @@ public static int parrotset (Player player){
 
 return result;
 }
-public static int sabreset (Player player){
+
+    public static int sabreset (Player player){
     int result = 0;
     if ( player.ssaved == 7 ){
         result += 2000;
@@ -125,7 +127,8 @@ public static int sabreset (Player player){
 
 return result;
 }
-public static int diamondset (Player player){
+
+    public static int diamondset (Player player){
     int result = 0;
     if ( player.dsaved == 7 ){
         result += 2000;
@@ -145,7 +148,8 @@ public static int diamondset (Player player){
 
 return result;
 }
-public static int goldset (Player player){
+
+    public static int goldset (Player player){
     int result = 0;
     if ( player.gsaved == 7 ){
         result += 2000;
@@ -162,6 +166,25 @@ public static int goldset (Player player){
     }
     
 
+
+return result;
+}
+
+    public static int monkeybusiness (Player player){
+    int result = 0;
+    if ( player.mpsaved == 7 ){
+        result += 2000;
+    } else if ( player.mpsaved == 6 ){
+        result += 1000;
+    } else if ( player.mpsaved == 5 ){
+        result += 500;
+    } else if ( player.mpsaved == 4){
+        result += 200;
+    } else if (player.mpsaved == 3){
+        result += 100;
+    } else if (player.mpsaved == 8){
+        result += 4000;
+    }
 
 return result;
 }

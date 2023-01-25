@@ -22,6 +22,7 @@ public class Player {
     public boolean finalturn;
     public String card;
     public int mpcount =0;
+    public int mpsaved = 0;
     public int roundscore=0;
     public int turnscore=0;
     public boolean firstroll;

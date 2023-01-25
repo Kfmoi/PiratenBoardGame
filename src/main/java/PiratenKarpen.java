@@ -20,12 +20,8 @@ public class PiratenKarpen {
         Player player2 = new Player();
         player1.decision = "combo";
         player2.decision = "combo";
-        Cards.pickcard(player1);
-        System.out.println(player1.card);
-        Cards.pickcard(player2);
-        System.out.println(player2.card);
 
-            double amountofgames = 42;
+            double amountofgames = 1;
 
 
             System.out.println("\nWelcome to Piraten Karpen Simulator!");
@@ -35,10 +31,15 @@ public class PiratenKarpen {
 
             for (int i=0; i<amountofgames;i++){
                 Reset.reset(player1, player2);
+                Cards.pickcard(player1);
+                player1.card = "Monkey Business";               
+                Cards.pickcard(player2);
+                player2.card = "Monkey Business";
                 System.out.println("\nGame #" + (i+1));
 
                 logging.debug("Player 1's rolls first");
                 System.out.println("Player 1's rolls first");
+                System.out.println("Player 1's card is " + player1.card);
                 Player.pick(player1);
                 
                 Start.skcount = 0;
@@ -51,11 +52,13 @@ public class PiratenKarpen {
                     player1.finalturn = true;
                     logging.debug("Player 2's final turn");
                     System.out.println("Player 2's final turn");
+                    System.out.println("Player 2's card is " + player2.card);
                     Player.last(player1, player2);
                     System.out.println("Player 2's Final Score: "+ player2.totalscore);
                 }else {
                 logging.debug("\nPlayer 2's turn");
                 System.out.println("\nPlayer 2's turn");
+                System.out.println("Player 2's card is " + player2.card);
                 Player.pick(player2);
                 }
 
