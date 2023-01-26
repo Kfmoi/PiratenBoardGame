@@ -4,41 +4,41 @@ import pk.logging.logging;
 
 public class Player {
     public int totalscore = 0;
-    public int totalsk = 0;
-    public int gcount = 0;
-    public int dcount =0 ;
-    public int mcount = 0;
-    public int scount =0 ;
-    public int pcount =0 ;
-    public int ssaved = 0;
-    public int msaved = 0;
-    public int dsaved = 0;
-    public int gsaved = 0;
-    public int psaved = 0;
-    public double wins;
-    public boolean skcheck = false;
-    public String decision;
-    public boolean choice;
-    public boolean finalturn;
-    public String card;
-    public int mpcount =0;
-    public int mpsaved = 0;
-    public int turnscore=0;
-    public boolean firstroll = true;
+    public int Total_skulls = 0;
+    public int Gold_count = 0;
+    public int Diamond_count =0 ;
+    public int Monkey_count = 0;
+    public int Sabre_count =0 ;
+    public int Parrot_count =0 ;
+    public int Sabre_saved = 0;
+    public int Monkey_saved = 0;
+    public int Diamond_saved = 0;
+    public int Gold_saved = 0;
+    public int Parrot_saved = 0;
+    public double Wins;
+    public boolean Skull_check = false;
+    public String Strategy_Decision;
+    public boolean Endturn;
+    public boolean Final_turn;
+    public String Card;
+    public int MP_count =0;
+    public int MP_saved = 0;
+    public int Turn_score=0;
+    public boolean First_roll = true;
     public int sabresneeded = 0;
-    public int diffm =0;
-    public int diffp =0;
-    public int diffg =0;
-    public int diffd =0;
-    public int diffs =0;
-    public int diffmp =0;
+    public int Monkey_diff =0;
+    public int Parrot_diff =0;
+    public int Gold_diff =0;
+    public int Diamond_diff =0;
+    public int Sabre_diff =0;
+    public int MP_diff =0;
 
 
-    public static void pick(Player player1){
-        if(player1.decision == "Random" || player1.decision == "random"){
-            Strategies.strategy1(player1);
+    public static void GameStrategy(Player player1){
+        if(player1.Strategy_Decision == "Random" || player1.Strategy_Decision == "random"){
+            Strategies.Random_strategy(player1);
         } else {
-            Strategies.strategy2(player1);
+            Strategies.Combo_strategy(player1);
         }
     }
 
@@ -53,16 +53,16 @@ public class Player {
     public static void choose(Player player1){
         
             if(Start.skcount == 2){
-                player1.choice = false;
+                player1.Endturn = false;
             } else {
-                player1.choice= true;
+                player1.Endturn= true;
             }
         
     }
 
     public static void last (Player player1, Player player2){
-        if (player1.finalturn == true){
-            Player.pick(player2);
+        if (player1.Final_turn == true){
+            Player.GameStrategy(player2);
         } 
 
     }

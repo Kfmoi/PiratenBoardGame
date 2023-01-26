@@ -14,9 +14,9 @@
   * To package the project as a turn-key artefact:
     * `mvn package`
   * To run the packaged delivery:
-    * `java -jar target/piraten-karpen-jar-with-dependencies.jar "strategy1" "strategy2"` 
+    * `java -jar target/piraten-karpen-jar-with-dependencies.jar "strategy1" "strategy2"` *No quotations* 
   * To run use trace:
-    * `mvn -q -D TRACK exec:java`
+    * `mvn -q exec:java -D exec.args="random combo" -D TRACK`
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 

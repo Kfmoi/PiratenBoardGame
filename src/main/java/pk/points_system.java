@@ -66,11 +66,11 @@ public class points_system {
     public static void results(Player player1, Player player2){
 
         if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
-            player1.wins++;
+            player1.Wins++;
             System.out.println("Player 1 Wins!!!");
         } else if ((player2.totalscore > player1.totalscore) && player2.totalscore >=6000){
             System.out.println("Player 2 Wins!!!");
-            player2.wins++;
+            player2.Wins++;
         } else {
             System.out.println("Tie Game");
         }
@@ -110,53 +110,53 @@ public class points_system {
     // Combo checks
     public static int monkeyset (Player player){
         int result = 0;
-        if (player.decision == "combo"){
-        if (player.firstroll == true){
-            if ( player.mcount == 7 ){
+        if (player.Strategy_Decision == "combo"){
+        if (player.First_roll == true){
+            if ( player.Monkey_count == 7 ){
                 result += 2000;
-            } else if ( player.mcount == 6 ){
+            } else if ( player.Monkey_count == 6 ){
                 result += 1000;
-            } else if ( player.mcount == 5 ){
+            } else if ( player.Monkey_count == 5 ){
                 result += 500;
-            } else if ( player.mcount == 4){
+            } else if ( player.Monkey_count == 4){
                 result += 200;
-            } else if (player.mcount == 3){
+            } else if (player.Monkey_count == 3){
                 result += 100;
-            } else if (player.mcount == 8){
+            } else if (player.Monkey_count == 8){
                 result += 4000;
             }
         } else {
-        if (player.msaved < 3){
-        if ( player.msaved == 7 ){
+        if (player.Monkey_saved < 3){
+        if ( player.Monkey_saved == 7 ){
             result += 2000;
-        } else if ( player.msaved == 6 ){
+        } else if ( player.Monkey_saved == 6 ){
             result += 1000;
-        } else if ( player.msaved == 5 ){
+        } else if ( player.Monkey_saved == 5 ){
             result += 500;
-        } else if ( player.msaved == 4){
+        } else if ( player.Monkey_saved == 4){
             result += 200;
-        } else if (player.msaved == 3){
+        } else if (player.Monkey_saved == 3){
             result += 100;
-        } else if (player.msaved == 8){
+        } else if (player.Monkey_saved == 8){
             result += 4000;
         }
     } else {
-        result += setdifference(player.msaved, player.diffm);
+        result += setdifference(player.Monkey_saved, player.Monkey_diff);
     }
         
 }
 } else {
-    if ( player.mcount == 7 ){
+    if ( player.Monkey_count == 7 ){
         result += 2000;
-    } else if ( player.mcount == 6 ){
+    } else if ( player.Monkey_count == 6 ){
         result += 1000;
-    } else if ( player.mcount == 5 ){
+    } else if ( player.Monkey_count == 5 ){
         result += 500;
-    } else if ( player.mcount == 4){
+    } else if ( player.Monkey_count == 4){
         result += 200;
-    } else if (player.mcount == 3){
+    } else if (player.Monkey_count == 3){
         result += 100;
-    } else if (player.mcount == 8){
+    } else if (player.Monkey_count == 8){
         result += 4000;
     }
 }
@@ -165,53 +165,53 @@ public class points_system {
 
     public static int parrotset (Player player){
     int result = 0;
-    if (player.decision == "combo"){
-    if (player.firstroll == true){
-        if ( player.pcount == 7 ){
+    if (player.Strategy_Decision == "combo"){
+    if (player.First_roll == true){
+        if ( player.Parrot_count == 7 ){
             result += 2000;
-        } else if ( player.pcount == 6 ){
+        } else if ( player.Parrot_count == 6 ){
             result += 1000;
-        } else if ( player.pcount == 5 ){
+        } else if ( player.Parrot_count == 5 ){
             result += 500;
-        } else if ( player.pcount == 4){
+        } else if ( player.Parrot_count == 4){
             result += 200;
-        } else if (player.pcount == 3){
+        } else if (player.Parrot_count == 3){
             result += 100;
-        } else if (player.pcount == 8){
+        } else if (player.Parrot_count == 8){
             result += 4000;
         }
     } else {
-    if (player.psaved < 3){
-    if ( player.psaved == 7 ){
+    if (player.Parrot_saved < 3){
+    if ( player.Parrot_saved == 7 ){
         result += 2000;
-    } else if ( player.psaved == 6 ){
+    } else if ( player.Parrot_saved == 6 ){
         result += 1000;
-    } else if ( player.psaved == 5 ){
+    } else if ( player.Parrot_saved == 5 ){
         result += 500;
-    } else if ( player.psaved == 4){
+    } else if ( player.Parrot_saved == 4){
         result += 200;
-    } else if (player.psaved == 3){
+    } else if (player.Parrot_saved == 3){
         result += 100;
-    } else if (player.psaved == 8){
+    } else if (player.Parrot_saved == 8){
         result += 4000;
     }
 } else {
-    setdifference(player.psaved, player.diffp);
+    setdifference(player.Parrot_saved, player.Parrot_diff);
 }
     
     }
 } else {
-    if ( player.pcount == 7 ){
+    if ( player.Parrot_count == 7 ){
         result += 2000;
-    } else if ( player.pcount == 6 ){
+    } else if ( player.Parrot_count == 6 ){
         result += 1000;
-    } else if ( player.pcount == 5 ){
+    } else if ( player.Parrot_count == 5 ){
         result += 500;
-    } else if ( player.pcount == 4){
+    } else if ( player.Parrot_count == 4){
         result += 200;
-    } else if (player.pcount == 3){
+    } else if (player.Parrot_count == 3){
         result += 100;
-    } else if (player.pcount == 8){
+    } else if (player.Parrot_count == 8){
         result += 4000;
     }
 }
@@ -221,53 +221,53 @@ return result;
 
     public static int sabreset (Player player){
     int result = 0;
-    if (player.decision == "combo"){
-    if (player.firstroll == true){
-        if ( player.scount == 7 ){
+    if (player.Strategy_Decision == "combo"){
+    if (player.First_roll == true){
+        if ( player.Sabre_count == 7 ){
             result += 2000;
-        } else if ( player.scount == 6 ){
+        } else if ( player.Sabre_count == 6 ){
             result += 1000;
-        } else if ( player.scount == 5 ){
+        } else if ( player.Sabre_count == 5 ){
             result += 500;
-        } else if ( player.scount == 4){
+        } else if ( player.Sabre_count == 4){
             result += 200;
-        } else if (player.scount == 3){
+        } else if (player.Sabre_count == 3){
             result += 100;
-        } else if (player.scount == 8){
+        } else if (player.Sabre_count == 8){
             result += 4000;
         }
     } else{
-    if (player.ssaved < 3){
-    if ( player.ssaved == 7 ){
+    if (player.Sabre_saved < 3){
+    if ( player.Sabre_saved == 7 ){
         result += 2000;
-    } else if ( player.ssaved == 6 ){
+    } else if ( player.Sabre_saved == 6 ){
         result += 1000;
-    } else if ( player.ssaved == 5 ){
+    } else if ( player.Sabre_saved == 5 ){
         result += 500;
-    } else if ( player.ssaved == 4){
+    } else if ( player.Sabre_saved == 4){
         result += 200;
-    } else if (player.ssaved == 3){
+    } else if (player.Sabre_saved == 3){
         result += 100;
-    } else if (player.ssaved == 8){
+    } else if (player.Sabre_saved == 8){
         result += 4000;
     }
 } else {
-    result += setdifference(player.ssaved, player.diffs);
+    result += setdifference(player.Sabre_saved, player.Sabre_diff);
 }
     }
     
     } else {
-        if ( player.scount == 7 ){
+        if ( player.Sabre_count == 7 ){
             result += 2000;
-        } else if ( player.scount == 6 ){
+        } else if ( player.Sabre_count == 6 ){
             result += 1000;
-        } else if ( player.scount == 5 ){
+        } else if ( player.Sabre_count == 5 ){
             result += 500;
-        } else if ( player.scount == 4){
+        } else if ( player.Sabre_count == 4){
             result += 200;
-        } else if (player.scount == 3){
+        } else if (player.Sabre_count == 3){
             result += 100;
-        } else if (player.scount == 8){
+        } else if (player.Sabre_count == 8){
             result += 4000;
         }
     }
@@ -277,53 +277,53 @@ return result;
 
     public static int diamondset (Player player){
     int result = 0;
-    if (player.decision == "combo"){
-    if (player.firstroll == true){
-        if ( player.dcount == 7 ){
+    if (player.Strategy_Decision == "combo"){
+    if (player.First_roll == true){
+        if ( player.Diamond_count == 7 ){
             result += 2000;
-        } else if ( player.dcount == 6 ){
+        } else if ( player.Diamond_count == 6 ){
             result += 1000;
-        } else if ( player.dcount == 5 ){
+        } else if ( player.Diamond_count == 5 ){
             result += 500;
-        } else if ( player.dcount == 4){
+        } else if ( player.Diamond_count == 4){
             result += 200;
-        } else if (player.dcount == 3){
+        } else if (player.Diamond_count == 3){
             result += 100;
-        } else if (player.dcount == 8){
+        } else if (player.Diamond_count == 8){
             result += 4000;
         }
     } else {
-    if (player.dsaved < 3){
-    if ( player.dsaved == 7 ){
+    if (player.Diamond_saved < 3){
+    if ( player.Diamond_saved == 7 ){
         result += 2000;
-    } else if ( player.dsaved == 6 ){
+    } else if ( player.Diamond_saved == 6 ){
         result += 1000;
-    } else if ( player.dsaved == 5 ){
+    } else if ( player.Diamond_saved == 5 ){
         result += 500;
-    } else if ( player.dsaved == 4){
+    } else if ( player.Diamond_saved == 4){
         result += 200;
-    } else if (player.dsaved == 3){
+    } else if (player.Diamond_saved == 3){
         result += 100;
-    } else if (player.dsaved == 8){
+    } else if (player.Diamond_saved == 8){
         result += 4000;
     }
 
 } else {
-    result += setdifference(player.dsaved, player.diffd);
+    result += setdifference(player.Diamond_saved, player.Diamond_diff);
 }
     }
 } else {
-    if ( player.dcount == 7 ){
+    if ( player.Diamond_count == 7 ){
         result += 2000;
-    } else if ( player.dcount == 6 ){
+    } else if ( player.Diamond_count == 6 ){
         result += 1000;
-    } else if ( player.dcount == 5 ){
+    } else if ( player.Diamond_count == 5 ){
         result += 500;
-    } else if ( player.dcount == 4){
+    } else if ( player.Diamond_count == 4){
         result += 200;
-    } else if (player.dcount == 3){
+    } else if (player.Diamond_count == 3){
         result += 100;
-    } else if (player.dcount == 8){
+    } else if (player.Diamond_count == 8){
         result += 4000;
     }
 }
@@ -334,52 +334,52 @@ return result;
 
     public static int goldset (Player player){
     int result = 0;
-    if (player.decision == "combo"){
-    if (player.firstroll == true){
-        if ( player.gcount == 7 ){
+    if (player.Strategy_Decision == "combo"){
+    if (player.First_roll == true){
+        if ( player.Gold_count == 7 ){
             result += 2000;
-        } else if ( player.gcount == 6 ){
+        } else if ( player.Gold_count == 6 ){
             result += 1000;
-        } else if ( player.gcount == 5 ){
+        } else if ( player.Gold_count == 5 ){
             result += 500;
-        } else if ( player.gcount == 4){
+        } else if ( player.Gold_count == 4){
             result += 200;
-        } else if (player.gcount == 3){
+        } else if (player.Gold_count == 3){
             result += 100;
-        } else if (player.gcount == 8){
+        } else if (player.Gold_count == 8){
             result += 4000;
         }
     } else {
-    if (player.gsaved < 3){
-    if ( player.gsaved == 7 ){
+    if (player.Gold_saved < 3){
+    if ( player.Gold_saved == 7 ){
         result += 2000;
-    } else if ( player.gsaved == 6 ){
+    } else if ( player.Gold_saved == 6 ){
         result += 1000;
-    } else if ( player.gsaved == 5 ){
+    } else if ( player.Gold_saved == 5 ){
         result += 500;
-    } else if ( player.gsaved == 4){
+    } else if ( player.Gold_saved == 4){
         result += 200;
-    } else if (player.gsaved == 3){
+    } else if (player.Gold_saved == 3){
         result += 100;
-    } else if (player.gsaved == 8){
+    } else if (player.Gold_saved == 8){
         result += 4000;
     }
 }else {
-    result += setdifference(player.gsaved, player.diffg);
+    result += setdifference(player.Gold_saved, player.Gold_diff);
 }
     }
 } else {
-    if ( player.gcount == 7 ){
+    if ( player.Gold_count == 7 ){
         result += 2000;
-    } else if ( player.gcount == 6 ){
+    } else if ( player.Gold_count == 6 ){
         result += 1000;
-    } else if ( player.gcount == 5 ){
+    } else if ( player.Gold_count == 5 ){
         result += 500;
-    } else if ( player.gcount == 4){
+    } else if ( player.Gold_count == 4){
         result += 200;
-    } else if (player.gcount == 3){
+    } else if (player.Gold_count == 3){
         result += 100;
-    } else if (player.gcount == 8){
+    } else if (player.Gold_count == 8){
         result += 4000;
     }
 }
@@ -390,52 +390,52 @@ return result;
 
     public static int monkeybusiness (Player player){
     int result = 0;
-    if (player.decision == "combo"){
-    if (player.firstroll == true){
-        if ( player.mpcount == 7 ){
+    if (player.Strategy_Decision == "combo"){
+    if (player.First_roll == true){
+        if ( player.MP_count == 7 ){
             result += 2000;
-        } else if ( player.mpcount == 6 ){
+        } else if ( player.MP_count == 6 ){
             result += 1000;
-        } else if ( player.mpcount == 5 ){
+        } else if ( player.MP_count == 5 ){
             result += 500;
-        } else if ( player.mpcount == 4){
+        } else if ( player.MP_count == 4){
             result += 200;
-        } else if (player.mpcount == 3){
+        } else if (player.MP_count == 3){
             result += 100;
-        } else if (player.mpcount == 8){
+        } else if (player.MP_count == 8){
             result += 4000;
         }
     } else {
-    if (player.mpsaved < 3){
-    if ( player.mpsaved == 7 ){
+    if (player.MP_saved < 3){
+    if ( player.MP_saved == 7 ){
         result += 2000;
-    } else if ( player.mpsaved == 6 ){
+    } else if ( player.MP_saved == 6 ){
         result += 1000;
-    } else if ( player.mpsaved == 5 ){
+    } else if ( player.MP_saved == 5 ){
         result += 500;
-    } else if ( player.mpsaved == 4){
+    } else if ( player.MP_saved == 4){
         result += 200;
-    } else if (player.mpsaved == 3){
+    } else if (player.MP_saved == 3){
         result += 100;
-    } else if (player.mpsaved == 8){
+    } else if (player.MP_saved == 8){
         result += 4000;
     }
 } else {
-    result += setdifference(player.mpsaved, player.diffmp);
+    result += setdifference(player.MP_saved, player.MP_diff);
 }
     }
     } else {
-        if ( player.mpcount == 7 ){
+        if ( player.MP_count == 7 ){
             result += 2000;
-        } else if ( player.mpcount == 6 ){
+        } else if ( player.MP_count == 6 ){
             result += 1000;
-        } else if ( player.mpcount == 5 ){
+        } else if ( player.MP_count == 5 ){
             result += 500;
-        } else if ( player.mpcount == 4){
+        } else if ( player.MP_count == 4){
             result += 200;
-        } else if (player.mpcount == 3){
+        } else if (player.MP_count == 3){
             result += 100;
-        } else if (player.mpcount == 8){
+        } else if (player.MP_count == 8){
             result += 4000;
         }
     }
@@ -443,46 +443,68 @@ return result;
 }
 
     public static void caldifference(Player player){
-        if (player.card == "nop"){
-            if (player.dcount >= 1 || player.dsaved > 1){
-                player.diffd = (player.dcount + player.dsaved)-player.dsaved;
-                player.dsaved += player.dcount;
-                Start.count+= player.dcount;
-            } if (player.gcount > 1 || player.gsaved > 1){
-                player.diffg = (player.gcount + player.gsaved)-player.gsaved;
-                player.gsaved += player.gcount;
-                Start.count += player.gcount;
-            } if (player.mcount > 3 || player.msaved > 3){
-                player.diffm = (player.mcount + player.msaved)-player.msaved;
-                player.msaved += player.mcount;
-                Start.count+= player.mcount;
-            }if (player.pcount > 3|| player.psaved > 3){
-                player.diffp = (player.pcount + player.psaved)-player.psaved;
-                player.psaved += player.pcount;
-                Start.count+= player.pcount;
-            }if (player.scount > 3|| player.ssaved > 3){
-                player.diffs = (player.scount + player.ssaved)-player.ssaved;
-                player.ssaved += player.scount;
-                Start.count+= player.scount;
+        if (player.Card == "nop"){
+            if (player.Diamond_count >= 1 || player.Diamond_saved > 1){
+                player.Diamond_diff = (player.Diamond_count + player.Diamond_saved)-player.Diamond_saved;
+                player.Diamond_saved += player.Diamond_count;
+                Start.count+= player.Diamond_count;
+            } if (player.Gold_count > 1 || player.Gold_saved > 1){
+                player.Gold_diff = (player.Gold_count + player.Gold_saved)-player.Gold_saved;
+                player.Gold_saved += player.Gold_count;
+                Start.count += player.Gold_count;
+            } if (player.Monkey_count > 3 || player.Monkey_saved > 3){
+                player.Monkey_diff = (player.Monkey_count + player.Monkey_saved)-player.Monkey_saved;
+                player.Monkey_saved += player.Monkey_count;
+                Start.count+= player.Monkey_count;
+            }if (player.Parrot_count > 3|| player.Parrot_saved > 3){
+                player.Parrot_diff = (player.Parrot_count + player.Parrot_saved)-player.Parrot_saved;
+                player.Parrot_saved += player.Parrot_count;
+                Start.count+= player.Parrot_count;
+            }if (player.Sabre_count > 3|| player.Sabre_saved > 3){
+                player.Sabre_diff = (player.Sabre_count + player.Sabre_saved)-player.Sabre_saved;
+                player.Sabre_saved += player.Sabre_count;
+                Start.count+= player.Sabre_count;
             }
-        } else{
-            if (player.dcount > 1|| player.dsaved > 1){
-                player.diffd = (player.dcount + player.dsaved)-player.dsaved;
-                player.dsaved += player.dcount;
-                Start.count+= player.dcount;
-            } if (player.gcount > 1|| player.gsaved > 1){
-                player.diffg = (player.gcount + player.gsaved)-player.gsaved;
-                player.gsaved += player.gcount;
-                Start.count += player.gcount;
-            } if (player.mpcount >1|| player.mpsaved > 1){
-                player.diffmp = (player.mpcount + player.mpsaved)-player.mpsaved;
-                player.mpsaved += player.mpcount;
-                Start.count+= player.mpcount;
+        } else if (player.Card == "Monkey Business"){
+            if (player.Diamond_count > 1|| player.Diamond_saved > 1){
+                player.Diamond_diff = (player.Diamond_count + player.Diamond_saved)-player.Diamond_saved;
+                player.Diamond_saved += player.Diamond_count;
+                Start.count+= player.Diamond_count;
+            } if (player.Gold_count > 1|| player.Gold_saved > 1){
+                player.Gold_diff = (player.Gold_count + player.Gold_saved)-player.Gold_saved;
+                player.Gold_saved += player.Gold_count;
+                Start.count += player.Gold_count;
+            } if (player.MP_count >1|| player.MP_saved > 1){
+                player.MP_diff = (player.MP_count + player.MP_saved)-player.MP_saved;
+                player.MP_saved += player.MP_count;
+                Start.count+= player.MP_count;
             }
-            if (player.scount > 3|| player.ssaved > 3){
-                player.diffs = (player.scount + player.ssaved)-player.ssaved;
-                player.ssaved += player.scount;
-                Start.count+= player.scount;
+            if (player.Sabre_count > 3|| player.Sabre_saved > 3){
+                player.Sabre_diff = (player.Sabre_count + player.Sabre_saved)-player.Sabre_saved;
+                player.Sabre_saved += player.Sabre_count;
+                Start.count+= player.Sabre_count;
+            }
+        } else {
+            if (player.Diamond_count >= 1 || player.Diamond_saved > 1){
+                player.Diamond_diff = (player.Diamond_count + player.Diamond_saved)-player.Diamond_saved;
+                player.Diamond_saved += player.Diamond_count;
+                Start.count+= player.Diamond_count;
+            } if (player.Gold_count > 1 || player.Gold_saved > 1){
+                player.Gold_diff = (player.Gold_count + player.Gold_saved)-player.Gold_saved;
+                player.Gold_saved += player.Gold_count;
+                Start.count += player.Gold_count;
+            } if (player.Monkey_count > 3 || player.Monkey_saved > 3){
+                player.Monkey_diff = (player.Monkey_count + player.Monkey_saved)-player.Monkey_saved;
+                player.Monkey_saved += player.Monkey_count;
+                Start.count+= player.Monkey_count;
+            }if (player.Parrot_count > 3|| player.Parrot_saved > 3){
+                player.Parrot_diff = (player.Parrot_count + player.Parrot_saved)-player.Parrot_saved;
+                player.Parrot_saved += player.Parrot_count;
+                Start.count+= player.Parrot_count;
+            }if (player.Sabre_count > 3|| player.Sabre_saved > 3){
+                player.Sabre_diff = (player.Sabre_count + player.Sabre_saved)-player.Sabre_saved;
+                player.Sabre_saved += player.Sabre_count;
+                Start.count+= player.Sabre_count;
             }
         }
     }

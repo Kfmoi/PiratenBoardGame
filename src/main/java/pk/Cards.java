@@ -22,26 +22,26 @@ public class Cards {
     public static String pickcard(Player player){
         Random rand = new Random();
         int card = rand.nextInt(Carddeck().length);
-        player.card = Carddeck()[card];
-        return player.card;
+        player.Card = Carddeck()[card];
+        return player.Card;
     }
 
     public static boolean seabattlecheck(Player player){
         boolean ans = false;
-        if (player.card == "2 Sea Battle"){
-            if (player.scount < 2){
+        if (player.Card == "2 Sea Battle"){
+            if (player.Sabre_saved < 2){
                 ans = false;
             } else {
                 ans = true;
             }
-        } else if (player.card == "3 Sea Battle"){
-            if (player.scount < 3){
+        } else if (player.Card == "3 Sea Battle"){
+            if (player.Sabre_saved < 3){
                 ans = false;
             } else {
                 ans = true;
             }
-        } else if (player.card == "4 Sea Battle"){
-            if (player.scount < 4){
+        } else if (player.Card == "4 Sea Battle"){
+            if (player.Sabre_saved < 4){
                 ans = false;
             } else {
                 ans = true;
@@ -51,21 +51,22 @@ public class Cards {
     }
 
     public static void seabattlesneeded(Player player){
-        if (player.card == "2 Sea Battle"){
+        if (player.Card == "2 Sea Battle"){
             player.sabresneeded = 2;
-        } else if (player.card == "3 Sea Battle"){
+        } else if (player.Card == "3 Sea Battle"){
             player.sabresneeded = 3;
-        }else if (player.card == "4 Sea Battle"){
+        }else if (player.Card == "4 Sea Battle"){
             player.sabresneeded = 4;
         }
     }
+
     public static int seabattlereward(Player player){
         int ans=0;
-        if (player.card == "2 Sea Battle"){
+        if (player.Card == "2 Sea Battle"){
             ans = 300;
-        } else if (player.card == "3 Sea Battle"){
+        } else if (player.Card == "3 Sea Battle"){
             player.sabresneeded = 500;
-        }else if (player.card == "4 Sea Battle"){
+        }else if (player.Card == "4 Sea Battle"){
             player.sabresneeded = 1000;
         }
         return ans;
