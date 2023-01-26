@@ -6,26 +6,10 @@ public class Reset {
         player2.totalscore=0;
         Start.skcount=0;
         Start.playerscore =0;
-        player1.dcount = 0;
-        player2.dcount = 0;
-        player1.gcount = 0;
-        player2.gcount=0;
         player1.skcheck =false;
         player2.skcheck =false;
         player1.totalsk = 0;
         player2.totalsk = 0;
-        player1.mpcount = 0;
-        player2.mpcount =0;
-        player1.dcount = 0;
-        player1.gcount =0;
-        player1.scount = 0;
-        player1.mcount = 0;
-        player1.pcount=0;
-        player2.dcount = 0;
-        player2.gcount =0;
-        player2.scount = 0;
-        player2.mcount = 0;
-        player2.pcount=0;
         player1.finalturn = false;
         player2.finalturn =false;
         player1.card ="";
@@ -43,24 +27,47 @@ public class Reset {
         player2.gsaved = 0;
         player2.dsaved = 0;
         Start.count =0;
+        Start.difference=0;
+        player1.firstroll = true;
+        player2.firstroll =true;
+        Start.points =0;
+        player1.diffd = 0;
+        player1.diffs = 0;
+        player1.diffg = 0;
+        player1.diffm = 0;
+        player1.diffp = 0;
+        player1.diffmp = 0;
+        player2.diffd = 0;
+        player2.diffs = 0;
+        player2.diffg = 0;
+        player2.diffm = 0;
+        player2.diffp = 0;
+        player2.diffmp = 0;
+
     }
 
     public static void minireset(Player player){
         Start.skcount = 0;
-        player.dcount = 0;
-        player.gcount =0;
-        player.scount = 0;
-        player.mcount = 0;
-        player.pcount=0;
         Start.count =0;
         player.ssaved = 0;
         player.psaved = 0;
         player.msaved = 0;
         player.gsaved = 0;
         player.dsaved = 0;
-        player.mpcount =0;
-        
+        player.mpsaved = 0;
+        Start.difference = 0;
+        player.firstroll = true;
+        Start.points =0;
+        player.totalsk = 0;
+        player.turnscore=0;
         Start.playerscore = 0;
         player.skcheck =false;
+        player.choice = true;
+        player.diffd = 0;
+        player.diffs = 0;
+        player.diffg = 0;
+        player.diffm = 0;
+        player.diffp = 0;
+        player.diffmp = 0;
     }
 }

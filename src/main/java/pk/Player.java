@@ -23,10 +23,15 @@ public class Player {
     public String card;
     public int mpcount =0;
     public int mpsaved = 0;
-    public int roundscore=0;
     public int turnscore=0;
-    public boolean firstroll;
+    public boolean firstroll = true;
     public int sabresneeded = 0;
+    public int diffm =0;
+    public int diffp =0;
+    public int diffg =0;
+    public int diffd =0;
+    public int diffs =0;
+    public int diffmp =0;
 
 
     public static void pick(Player player1){
