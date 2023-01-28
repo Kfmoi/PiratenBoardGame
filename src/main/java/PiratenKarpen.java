@@ -18,10 +18,8 @@ public class PiratenKarpen {
         
         Player player1 = new Player();
         Player player2 = new Player();
-        player1.Strategy_Decision = "combo";
-        player2.Strategy_Decision = "random";
-        player1.Card = "Monkey Business";
-        player2.Card = "Monkey Business";
+        player1.Strategy_Decision = args[0];
+        player2.Strategy_Decision = args[1];
 
             double amountofgames = 42;
 
@@ -31,10 +29,10 @@ public class PiratenKarpen {
 
             for (int i=0; i<amountofgames;i++){
                 Reset.GameReset(player1, player2);
-                System.out.println("\nGame #" + (i+1));
+                logging.debug("\nGame #" + (i+1));
 
                 logging.debug("Player 1's rolls first");
-                //Cards.pickcard(player1); 
+                Cards.pickcard(player1); 
                 logging.debug("Player 1's card: "+ player1.Card);
                 Player.GameStrategy(player1);
                 
@@ -42,17 +40,17 @@ public class PiratenKarpen {
                 Start.playerscore = 0;
 
                 if (player1.totalscore >= 6000){
-                    System.out.println("Player 1's Final Score: "+ player1.totalscore);
+                    logging.debug("Player 1's Final Score: "+ player1.totalscore);
                     logging.debug("6000 has been reached!!!!");
                     player1.Final_turn = true;
                     logging.debug("Player 2's final turn");
-                    //Cards.pickcard(player2); 
+                    Cards.pickcard(player2); 
                     logging.debug("Player 2's card: "+ player2.Card);
                     Player.last(player1, player2);
-                    System.out.println("Player 2's Final Score: "+ player2.totalscore);
+                    logging.debug("Player 2's Final Score: "+ player2.totalscore);
                 }else {
                 logging.debug("\nPlayer 2's turn");
-                //Cards.pickcard(player2); 
+                Cards.pickcard(player2); 
                 logging.debug("Player 2's card: "+ player2.Card);
                 Player.GameStrategy(player2);
                 }
@@ -63,19 +61,19 @@ public class PiratenKarpen {
                 }
                 Reset.TurnReset(player1);
                 if (player2.totalscore >= 6000){
-                    System.out.println("Player 2's Final Score: "+ player2.totalscore);
+                    logging.debug("Player 2's Final Score: "+ player2.totalscore);
                     logging.debug("6000 has been reached!!!!");
                     player2.Final_turn = true;
                     logging.debug("Player 1's final turn");
-                    //Cards.pickcard(player1); 
+                    Cards.pickcard(player1); 
                     logging.debug("Player 1's card: "+ player1.Card);
                     Player.last(player2, player1);
-                    System.out.println("Player 1's Final Score: "+ player1.totalscore);
+                    logging.debug("Player 1's Final Score: "+ player1.totalscore);
                     break;
                 }else {
                 logging.debug("No player has reached 6000 points");
                 logging.debug("\nPlayer 1 rerolling....");
-                //Cards.pickcard(player1); 
+                Cards.pickcard(player1); 
                 logging.debug("Player 1's card: "+ player1.Card);
                 Player.GameStrategy(player1);
                 }
@@ -83,18 +81,18 @@ public class PiratenKarpen {
                 
                 Reset.TurnReset(player2);
                 if (player1.totalscore >= 6000){
-                    System.out.println("Player 1's Final Score: "+ player1.totalscore);
+                    logging.debug("Player 1's Final Score: "+ player1.totalscore);
                     logging.debug("6000 has been reached!!!!");
                     player1.Final_turn = true;
                     logging.debug("Player 2's final turn");
-                    //Cards.pickcard(player2); 
+                    Cards.pickcard(player2); 
                     logging.debug("Player 2's card: "+ player2.Card);
                     Player.last(player1, player2);
-                    System.out.println("Player 2's Final Score: "+ player2.totalscore);
+                    logging.debug("Player 2's Final Score: "+ player2.totalscore);
                     break;
                 }else {
                 logging.debug("\nPlayer 2 rerolling....");
-                //Cards.pickcard(player2); 
+                Cards.pickcard(player2); 
                 logging.debug("Player 2's card: "+ player2.Card);
                 Player.GameStrategy(player2);
                 }
@@ -107,8 +105,8 @@ public class PiratenKarpen {
             points_system.results(player1, player2);
             }
 
-            System.out.println("\nPlayer 1's' total wins: " + player1.Wins);
-            System.out.println("Player 2's' total wins: " + player2.Wins);
+            logging.debug("\nPlayer 1's' total wins: " + player1.Wins);
+            logging.debug("\nPlayer 2's' total wins: " + player2.Wins);
 
 
             double stdout1 = Percentage.stdout(player1.Wins,amountofgames);

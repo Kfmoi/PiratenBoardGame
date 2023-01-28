@@ -72,7 +72,7 @@ public class Start {
         if (res == true){
             playerscore=0;
         }
-        player.totalscore += playerscore;
+        player.Turn_score += playerscore;
         player.Total_skulls += skcount;
         printstat(player);
         player.Monkey_count = 0;

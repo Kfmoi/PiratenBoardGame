@@ -37,8 +37,8 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F04 | Keep track of any sets  |  D |  12/01/23 | 23/01/23
 | x   | F05 | end of turn when three skulls are rolled | D | 10/12/23 | 16/01/23
 | x   | F06 | Check for combo startegy | D | 10/12/23 | 23/01/23
-| x   | F07[F03] | Caclculate how many of each faces are rolled | S | 10/12/23 | 16/01/23
-| x   | F08 | Optimize to keep the the dice that will lead to highest points| S | 10/12/23 | 23/01/23
+| x   | F07[F03] | Caclculate how many of each faces are rolled | D | 10/12/23 | 16/01/23
+| x   | F08 | Optimize to keep the the dice that will lead to highest points| D | 10/12/23 | 23/01/23
 | x   | F09 | Reroll the random amount of dice subtracting the skulls rolled and the dices that are kept |  D |  12/01/23 | 16/01/23
 | x   | F10 | Score points: Rolling Gold coins or diamonds| S | 11/12/23 |  16/01/23
 | x   | F11 | Keep rerolling if the points score isnt greater or equal to 6000| D | 11/12/23 | 16/01/23
@@ -47,5 +47,8 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F14 | Set up the games for two players  |  D |  12/01/23 | 16/01/23
 | x   | F15 | Player wins, if they have more points(greater than 6000)| D | 11/12/23 | 16/01/23 
 | x   | F16 | Player plays last turn when his opponent reaches 6000 first  |  D |  12/01/23 | 23/01/23
+| x   | F17 | Allow players to pick a card from a Card Deck; containing the different cards  |  D |  25/01/23 | 25/01/23
+| x   | F18 | Player is rewarded when getting a number amount of sabres(Sea Battle Card) |  D |  25/01/23 | 26/01/23
+| x   | F19 | Monkeys and parrots are combined when Monkey Business Card is pulled|  D |  26/01/23 | 26/01/23
 | ... | ... | ... |
 

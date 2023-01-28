@@ -35,9 +35,9 @@ public class Player {
 
 
     public static void GameStrategy(Player player1){
-        if(player1.Strategy_Decision == "Random" || player1.Strategy_Decision == "random"){
+        if(player1.Strategy_Decision.equals("Random") || player1.Strategy_Decision.equals("random")){
             Strategies.Random_strategy(player1);
-        } else {
+        } else if (player1.Strategy_Decision.equals("Combo") || player1.Strategy_Decision.equals("combo")){
             Strategies.Combo_strategy(player1);
         }
     }

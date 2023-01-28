@@ -1,5 +1,7 @@
 package pk;
 
+import pk.logging.logging;
+
 public class points_system {
 
     public static int setdifference(int num,int difference){
@@ -67,12 +69,14 @@ public class points_system {
 
         if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
             player1.Wins++;
-            System.out.println("Player 1 Wins!!!");
+            logging.debug("Player 1 Wins!!!");
         } else if ((player2.totalscore > player1.totalscore) && player2.totalscore >=6000){
-            System.out.println("Player 2 Wins!!!");
+            logging.debug("Player 2 Wins!!!");
             player2.Wins++;
         } else {
-            System.out.println("Tie Game");
+            logging.debug("Tie Game");
+            player1.Wins++;
+            player2.Wins++;
         }
     }
 
