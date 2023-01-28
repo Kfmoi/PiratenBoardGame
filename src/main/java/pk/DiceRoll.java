@@ -7,7 +7,7 @@ package pk;
 
 import pk.logging.logging;
 
-public class Start {
+public class DiceRoll {
     public static int playerscore =0;
     public static int skcount=0;
     public static int count;
@@ -16,12 +16,15 @@ public class Start {
     public static boolean Sabres_check = false;
     public static boolean Done = false;
 
+    // Logging statement for the results
     public static void printstat(Player player){
     logging.debug("\nNumber of skulls: " + skcount);
     logging.debug("Number of points rolled:" + points);
     logging.debug("\nRound points: " + playerscore);
     logging.debug("Total score:" + player.totalscore);
     }
+    
+    // Rolls the num amount of dice and adds it to the different counters
     public static boolean rolldice(int num, Player player){
         Faces results = null;
         boolean res =false;
@@ -32,8 +35,8 @@ public class Start {
             logging.debug("\nDice #"+ j);
             results = myDice.roll();
             skcount += skulls.count(results);
-            player.Gold_count += points_system.goldcount(results);
-            player.Diamond_count += points_system.diamondcount(results);
+            player.Gold_count += Facecount.goldcount(results);
+            player.Diamond_count += Facecount.diamondcount(results);
             if (player.Card == "nop"){
                 player.Parrot_count += Facecount.parrotcount(results);
                 player.Monkey_count += Facecount.monkeycount(results);
@@ -42,29 +45,31 @@ public class Start {
                 player.MP_count += Facecount.monkeycount(results);
             }
             player.Sabre_count += Facecount.sabercount(results);
-            points += points_system.addpoints(results);
+            points += points_system.Add_points(results);
             logging.debug(results.name());
             res = skulls.check(skcount); 
     }
     return res;
     }
-     public static void points(Player player){
-        playerscore += points_system.fullchestcheck(player, points);   
-        playerscore += points_system.goldset(player);
-        playerscore += points_system.diamondset(player);
-        playerscore += points_system.sabreset(player);
+   
+    // Calculates points from the dices rolled
+    public static void points(Player player){
+        playerscore += points_system.Fullchest_check(player, points);   
+        playerscore += points_system.Gold_set(player);
+        playerscore += points_system.Diamond_set(player);
+        playerscore += points_system.Sabre_set(player);
         if (player.Card == "Monkey Business"){
-            playerscore += points_system.monkeybusiness(player);
+            playerscore += points_system.Monkeybusiness(player);
         } else {
-            playerscore += points_system.parrotset(player);
-            playerscore += points_system.monkeyset(player);
+            playerscore += points_system.Parrot_set(player);
+            playerscore += points_system.Monkey_set(player);
         }
-        playerscore += points_system.finalscore(points);
+        playerscore += points_system.Final_score(points);
      }
    
    
-     // Function for the first 8 dice rolls
-    public static boolean randomroll(int num, Player player){
+     // Random: Function for the rolling num amount of dice
+    public static boolean Random_roll(int num, Player player){
         
         boolean res = rolldice(num, player);
         points(player);
@@ -86,9 +91,10 @@ public class Start {
         return res;
     }
 
-    public static boolean comboroll(int num, Player player){ 
+    // Combo: Function for the rolling num amount of dice
+    public static boolean Combo_roll(int num, Player player){ 
         boolean res = rolldice(num, player);
-        points_system.caldifference(player);
+        points_system.Save_Dice(player);
         points(player);
 
         if (res == true){
@@ -115,11 +121,12 @@ public class Start {
         return res;
     }
     
-    public static boolean seabattleroll(int num, Player player){
+    // Sea Battle: Function for the rolling num amount of dice
+    public static boolean Seabattle_roll(int num, Player player){
 
         boolean res = rolldice(num, player);
         count += skcount;
-        Sabres_check = Cards.seabattlecheck(player);
+        Sabres_check = SeaBattles.check(player);
         
         
         if (Sabres_check == false){
@@ -130,14 +137,14 @@ public class Start {
             }
         } else {
             if (Done == false){ 
-                player.Turn_score += Cards.seabattlereward(player);
+                player.Turn_score += SeaBattles.reward(player);
                 Done = true;
                 if (player.Strategy_Decision == "Random"){
                     points(player);
                     player.Turn_score += playerscore;
                     player.totalscore += player.Turn_score;
                 } else{
-                    points_system.caldifference(player);
+                    points_system.Save_Dice(player);
                     points(player);
                     player.Turn_score += playerscore;
                     player.totalscore += player.Turn_score;
@@ -148,7 +155,7 @@ public class Start {
                     player.Turn_score += playerscore;
                     player.totalscore += player.Turn_score;
                 } else{
-                    points_system.caldifference(player);
+                    points_system.Save_Dice(player);
                     points(player);
                     player.Turn_score += playerscore;
                     player.totalscore += player.Turn_score;
@@ -159,7 +166,7 @@ public class Start {
         if (res == true){
             if (Sabres_check == false){
                 player.Turn_score = 0;
-                player.totalscore -= Cards.seabattlereward(player);
+                player.totalscore -= SeaBattles.reward(player);
                 playerscore =0;
             }
         }

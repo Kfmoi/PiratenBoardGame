@@ -5,14 +5,14 @@ import pk.Percentage;
 import pk.points_system;
 
 import pk.Reset;
-import pk.Start;
+import pk.DiceRoll;
 import pk.logging.logging;
 
 
 public class PiratenKarpen {
 
 
-
+    
     public static void main(String[] args) {
 
         
@@ -36,8 +36,8 @@ public class PiratenKarpen {
                 logging.debug("Player 1's card: "+ player1.Card);
                 Player.GameStrategy(player1);
                 
-                Start.skcount = 0;
-                Start.playerscore = 0;
+                DiceRoll.skcount = 0;
+                DiceRoll.playerscore = 0;
 
                 if (player1.totalscore >= 6000){
                     logging.debug("Player 1's Final Score: "+ player1.totalscore);

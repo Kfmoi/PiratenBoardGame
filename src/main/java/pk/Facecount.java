@@ -35,5 +35,27 @@ public class Facecount {
         return amountofsaber;
     }
 
+    // Function to count the amount of Gold faces has been rolled
+    public static int goldcount(Faces roll){
+        int amountofgold = 0;
+        String std = roll.name();
+        String [] list = {"MONKEY", "PARROT", "GOLD", "DIAMOND", "SABER", "SKULL"};
+        if (std == list[2]){
+            amountofgold++;
+        }
+        return amountofgold;
+    }
+
+    // Function to count the amount of Diamond faces has been rolled
+    public static int diamondcount(Faces roll){
+        int amountofdiamond = 0;
+        String std = roll.name();
+        String [] list = {"MONKEY", "PARROT", "GOLD", "DIAMOND", "SABER", "SKULL"};
+        if (std == list[3]){
+            amountofdiamond++;
+        }
+        return amountofdiamond;
+    }
+
 
 }

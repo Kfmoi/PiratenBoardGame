@@ -4,7 +4,8 @@ import pk.logging.logging;
 
 public class points_system {
 
-    public static int setdifference(int num,int difference){
+    // Function that adds the additional points when a set has already been rolled
+    public static int Set_difference(int num,int difference){
         int result =0;
         if (num == 3){
             if(difference ==1){
@@ -45,10 +46,9 @@ public class points_system {
             }
             return result;
         }
-
     
     // Adds points to a counter whenever a gold or diamond is rolled
-    public static int addpoints(Faces roll){
+    public static int Add_points(Faces roll){
         int amountofpoints=0;
 
         if (roll.equals(Faces.GOLD)|| roll.equals(Faces.DIAMOND)){
@@ -58,13 +58,13 @@ public class points_system {
     }
 
     // From the points, gets the score by *100
-    public static int finalscore(int points){
+    public static int Final_score(int points){
         points = points*100;
         return points;
 
     }
 
-    // Determines the winner of each game
+    // Determines the winner of each game, and adds the win to their counter
     public static void results(Player player1, Player player2){
 
         if ((player1.totalscore > player2.totalscore) && player1.totalscore >=6000){
@@ -80,30 +80,8 @@ public class points_system {
         }
     }
 
-    // // Function to count the amount of Gold faces has been rolled
-    public static int goldcount(Faces roll){
-        int amountofgold = 0;
-        String std = roll.name();
-        String [] list = {"MONKEY", "PARROT", "GOLD", "DIAMOND", "SABER", "SKULL"};
-        if (std == list[2]){
-            amountofgold++;
-        }
-        return amountofgold;
-    }
-
-    // Function to count the amount of Diamond faces has been rolled
-    public static int diamondcount(Faces roll){
-        int amountofdiamond = 0;
-        String std = roll.name();
-        String [] list = {"MONKEY", "PARROT", "GOLD", "DIAMOND", "SABER", "SKULL"};
-        if (std == list[3]){
-            amountofdiamond++;
-        }
-        return amountofdiamond;
-    }
-
-    // A full chest check function
-    public static int fullchestcheck(Player player, int num){
+    // A full chest check function, when you get points from all your 8 rolls
+    public static int Fullchest_check(Player player, int num){
         int result = 0;
         if (num == 8){
             result += 500;
@@ -111,8 +89,8 @@ public class points_system {
         return result;
     }
 
-    // Combo checks
-    public static int monkeyset (Player player){
+    // Checks if theres any Monkey sets starting from 3
+    public static int Monkey_set (Player player){
         int result = 0;
         if (player.Strategy_Decision == "combo"){
         if (player.First_roll == true){
@@ -145,7 +123,7 @@ public class points_system {
             result += 4000;
         }
     } else {
-        result += setdifference(player.Monkey_saved, player.Monkey_diff);
+        result += Set_difference(player.Monkey_saved, player.Monkey_diff);
     }
         
 }
@@ -167,7 +145,8 @@ public class points_system {
     return result;
 }
 
-    public static int parrotset (Player player){
+    // Checks if theres any Parrot sets starting from 3
+    public static int Parrot_set (Player player){
     int result = 0;
     if (player.Strategy_Decision == "combo"){
     if (player.First_roll == true){
@@ -200,7 +179,7 @@ public class points_system {
         result += 4000;
     }
 } else {
-    setdifference(player.Parrot_saved, player.Parrot_diff);
+    Set_difference(player.Parrot_saved, player.Parrot_diff);
 }
     
     }
@@ -223,7 +202,8 @@ public class points_system {
 return result;
 }
 
-    public static int sabreset (Player player){
+    // Checks if theres any Sabre sets starting from 3
+    public static int Sabre_set (Player player){
     int result = 0;
     if (player.Strategy_Decision == "combo"){
     if (player.First_roll == true){
@@ -256,7 +236,7 @@ return result;
         result += 4000;
     }
 } else {
-    result += setdifference(player.Sabre_saved, player.Sabre_diff);
+    result += Set_difference(player.Sabre_saved, player.Sabre_diff);
 }
     }
     
@@ -279,7 +259,8 @@ return result;
 return result;
 }
 
-    public static int diamondset (Player player){
+    // Checks if theres any Diamond sets starting from 3
+    public static int Diamond_set (Player player){
     int result = 0;
     if (player.Strategy_Decision == "combo"){
     if (player.First_roll == true){
@@ -313,7 +294,7 @@ return result;
     }
 
 } else {
-    result += setdifference(player.Diamond_saved, player.Diamond_diff);
+    result += Set_difference(player.Diamond_saved, player.Diamond_diff);
 }
     }
 } else {
@@ -336,7 +317,8 @@ return result;
 return result;
 }
 
-    public static int goldset (Player player){
+    // Checks if theres any Gold sets starting from 3
+    public static int Gold_set (Player player){
     int result = 0;
     if (player.Strategy_Decision == "combo"){
     if (player.First_roll == true){
@@ -369,7 +351,7 @@ return result;
         result += 4000;
     }
 }else {
-    result += setdifference(player.Gold_saved, player.Gold_diff);
+    result += Set_difference(player.Gold_saved, player.Gold_diff);
 }
     }
 } else {
@@ -392,7 +374,8 @@ return result;
 return result;
 }
 
-    public static int monkeybusiness (Player player){
+    // Checks if theres any Monkey Business sets sets starting from 3
+    public static int Monkeybusiness (Player player){
     int result = 0;
     if (player.Strategy_Decision == "combo"){
     if (player.First_roll == true){
@@ -425,7 +408,7 @@ return result;
         result += 4000;
     }
 } else {
-    result += setdifference(player.MP_saved, player.MP_diff);
+    result += Set_difference(player.MP_saved, player.MP_diff);
 }
     }
     } else {
@@ -446,69 +429,70 @@ return result;
 return result;
 }
 
-    public static void caldifference(Player player){
+    // Function that chooses which dice to keep and what to reroll
+    public static void Save_Dice(Player player){
         if (player.Card == "nop"){
             if (player.Diamond_count >= 1 || player.Diamond_saved > 1){
                 player.Diamond_diff = (player.Diamond_count + player.Diamond_saved)-player.Diamond_saved;
                 player.Diamond_saved += player.Diamond_count;
-                Start.count+= player.Diamond_count;
+                DiceRoll.count+= player.Diamond_count;
             } if (player.Gold_count > 1 || player.Gold_saved > 1){
                 player.Gold_diff = (player.Gold_count + player.Gold_saved)-player.Gold_saved;
                 player.Gold_saved += player.Gold_count;
-                Start.count += player.Gold_count;
+                DiceRoll.count += player.Gold_count;
             } if (player.Monkey_count > 3 || player.Monkey_saved > 3){
                 player.Monkey_diff = (player.Monkey_count + player.Monkey_saved)-player.Monkey_saved;
                 player.Monkey_saved += player.Monkey_count;
-                Start.count+= player.Monkey_count;
+                DiceRoll.count+= player.Monkey_count;
             }if (player.Parrot_count > 3|| player.Parrot_saved > 3){
                 player.Parrot_diff = (player.Parrot_count + player.Parrot_saved)-player.Parrot_saved;
                 player.Parrot_saved += player.Parrot_count;
-                Start.count+= player.Parrot_count;
+                DiceRoll.count+= player.Parrot_count;
             }if (player.Sabre_count > 3|| player.Sabre_saved > 3){
                 player.Sabre_diff = (player.Sabre_count + player.Sabre_saved)-player.Sabre_saved;
                 player.Sabre_saved += player.Sabre_count;
-                Start.count+= player.Sabre_count;
+                DiceRoll.count+= player.Sabre_count;
             }
         } else if (player.Card == "Monkey Business"){
             if (player.Diamond_count > 1|| player.Diamond_saved > 1){
                 player.Diamond_diff = (player.Diamond_count + player.Diamond_saved)-player.Diamond_saved;
                 player.Diamond_saved += player.Diamond_count;
-                Start.count+= player.Diamond_count;
+                DiceRoll.count+= player.Diamond_count;
             } if (player.Gold_count > 1|| player.Gold_saved > 1){
                 player.Gold_diff = (player.Gold_count + player.Gold_saved)-player.Gold_saved;
                 player.Gold_saved += player.Gold_count;
-                Start.count += player.Gold_count;
+                DiceRoll.count += player.Gold_count;
             } if (player.MP_count >1|| player.MP_saved > 1){
                 player.MP_diff = (player.MP_count + player.MP_saved)-player.MP_saved;
                 player.MP_saved += player.MP_count;
-                Start.count+= player.MP_count;
+                DiceRoll.count+= player.MP_count;
             }
             if (player.Sabre_count > 3|| player.Sabre_saved > 3){
                 player.Sabre_diff = (player.Sabre_count + player.Sabre_saved)-player.Sabre_saved;
                 player.Sabre_saved += player.Sabre_count;
-                Start.count+= player.Sabre_count;
+                DiceRoll.count+= player.Sabre_count;
             }
         } else {
             if (player.Diamond_count >= 1 || player.Diamond_saved > 1){
                 player.Diamond_diff = (player.Diamond_count + player.Diamond_saved)-player.Diamond_saved;
                 player.Diamond_saved += player.Diamond_count;
-                Start.count+= player.Diamond_count;
+                DiceRoll.count+= player.Diamond_count;
             } if (player.Gold_count > 1 || player.Gold_saved > 1){
                 player.Gold_diff = (player.Gold_count + player.Gold_saved)-player.Gold_saved;
                 player.Gold_saved += player.Gold_count;
-                Start.count += player.Gold_count;
+                DiceRoll.count += player.Gold_count;
             } if (player.Monkey_count > 3 || player.Monkey_saved > 3){
                 player.Monkey_diff = (player.Monkey_count + player.Monkey_saved)-player.Monkey_saved;
                 player.Monkey_saved += player.Monkey_count;
-                Start.count+= player.Monkey_count;
+                DiceRoll.count+= player.Monkey_count;
             }if (player.Parrot_count > 3|| player.Parrot_saved > 3){
                 player.Parrot_diff = (player.Parrot_count + player.Parrot_saved)-player.Parrot_saved;
                 player.Parrot_saved += player.Parrot_count;
-                Start.count+= player.Parrot_count;
+                DiceRoll.count+= player.Parrot_count;
             }if (player.Sabre_count > 3|| player.Sabre_saved > 3){
                 player.Sabre_diff = (player.Sabre_count + player.Sabre_saved)-player.Sabre_saved;
                 player.Sabre_saved += player.Sabre_count;
-                Start.count+= player.Sabre_count;
+                DiceRoll.count+= player.Sabre_count;
             }
         }
     }
