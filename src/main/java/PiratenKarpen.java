@@ -23,8 +23,7 @@ public class PiratenKarpen {
 
             double amountofgames = 42;
 
-
-            System.out.println("\nWelcome to Piraten Karpen Simulator!");
+            logging.debug("\nWelcome to Piraten Karpen Simulator!");
 
 
             for (int i=0; i<amountofgames;i++){
